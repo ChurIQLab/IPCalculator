@@ -6,8 +6,8 @@ protocol MainModuleFactoryProtocol: AnyObject {
 
 final class MainModuleFactory: MainModuleFactoryProtocol {
     func make() -> UIViewController {
-        let model = MainModel()
-        let presenter = MainPresenter(model: model)
+        let model = SubnetMaskModel.all
+        let presenter = MainPresenter(maskModel: model)
         let view = MainViewController(presenter: presenter)
         presenter.view = view
         return view

@@ -14,9 +14,17 @@
 		0F8CCA8D2DE0D468002495C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F8CCA822DE0D468002495C8 /* LaunchScreen.storyboard */; };
 		0F8CCA932DE0D8BD002495C8 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CCA922DE0D8B3002495C8 /* MainPresenter.swift */; };
 		0F8CCA962DE0D8D7002495C8 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CCA952DE0D8D4002495C8 /* MainView.swift */; };
-		0F8CCA982DE0D8DD002495C8 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CCA972DE0D8DB002495C8 /* MainModel.swift */; };
 		0F8CCA9D2DE0D944002495C8 /* MainModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CCA9C2DE0D93F002495C8 /* MainModuleFactory.swift */; };
 		0F8CCA9F2DE0DA71002495C8 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CCA9E2DE0DA6C002495C8 /* MainViewModel.swift */; };
+		0F8CCAA42DE10411002495C8 /* SubnetMaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CCAA32DE1040A002495C8 /* SubnetMaskModel.swift */; };
+		0F8CCAA72DE1C3CB002495C8 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CCAA62DE1C3C4002495C8 /* MainTableViewCell.swift */; };
+		0F8CCAAA2DE1C5B1002495C8 /* MainTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CCAA92DE1C5A5002495C8 /* MainTableViewHeader.swift */; };
+		0F8CCAAD2DE318B6002495C8 /* MainTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CCAAC2DE318B1002495C8 /* MainTableView.swift */; };
+		0F8CCAB02DE318D9002495C8 /* MaskPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CCAAF2DE318D4002495C8 /* MaskPickerView.swift */; };
+		0F8CCAB32DE3B5C9002495C8 /* IPCalculationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CCAB22DE3B5C8002495C8 /* IPCalculationModel.swift */; };
+		0F8CCABC2DE3B6D2002495C8 /* MainViewModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CCABB2DE3B6C9002495C8 /* MainViewModelMapper.swift */; };
+		0F8CCABE2DE3B7CC002495C8 /* MainMaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CCABD2DE3B7C7002495C8 /* MainMaskViewModel.swift */; };
+		0F8CCAC02DE3B801002495C8 /* MainTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CCABF2DE3B7F4002495C8 /* MainTableViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,9 +37,17 @@
 		0F8CCA862DE0D468002495C8 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		0F8CCA922DE0D8B3002495C8 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		0F8CCA952DE0D8D4002495C8 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		0F8CCA972DE0D8DB002495C8 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
 		0F8CCA9C2DE0D93F002495C8 /* MainModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModuleFactory.swift; sourceTree = "<group>"; };
 		0F8CCA9E2DE0DA6C002495C8 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		0F8CCAA32DE1040A002495C8 /* SubnetMaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubnetMaskModel.swift; sourceTree = "<group>"; };
+		0F8CCAA62DE1C3C4002495C8 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		0F8CCAA92DE1C5A5002495C8 /* MainTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewHeader.swift; sourceTree = "<group>"; };
+		0F8CCAAC2DE318B1002495C8 /* MainTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableView.swift; sourceTree = "<group>"; };
+		0F8CCAAF2DE318D4002495C8 /* MaskPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskPickerView.swift; sourceTree = "<group>"; };
+		0F8CCAB22DE3B5C8002495C8 /* IPCalculationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPCalculationModel.swift; sourceTree = "<group>"; };
+		0F8CCABB2DE3B6C9002495C8 /* MainViewModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModelMapper.swift; sourceTree = "<group>"; };
+		0F8CCABD2DE3B7C7002495C8 /* MainMaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMaskViewModel.swift; sourceTree = "<group>"; };
+		0F8CCABF2DE3B7F4002495C8 /* MainTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +119,7 @@
 			children = (
 				0F8CCA9C2DE0D93F002495C8 /* MainModuleFactory.swift */,
 				0F8CCA992DE0D8E5002495C8 /* View */,
+				0F8CCAB42DE3B69A002495C8 /* ViewModel */,
 				0F8CCA9A2DE0D8ED002495C8 /* Model */,
 				0F8CCA9B2DE0D8F3002495C8 /* Presenter */,
 			);
@@ -112,8 +129,9 @@
 		0F8CCA992DE0D8E5002495C8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0F8CCAAE2DE318CD002495C8 /* PickerView */,
+				0F8CCAAB2DE318A5002495C8 /* TableView */,
 				0F8CCA952DE0D8D4002495C8 /* MainView.swift */,
-				0F8CCA9E2DE0DA6C002495C8 /* MainViewModel.swift */,
 				0F8CCA862DE0D468002495C8 /* MainViewController.swift */,
 			);
 			path = View;
@@ -122,7 +140,8 @@
 		0F8CCA9A2DE0D8ED002495C8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0F8CCA972DE0D8DB002495C8 /* MainModel.swift */,
+				0F8CCAA32DE1040A002495C8 /* SubnetMaskModel.swift */,
+				0F8CCAB22DE3B5C8002495C8 /* IPCalculationModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -133,6 +152,51 @@
 				0F8CCA922DE0D8B3002495C8 /* MainPresenter.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		0F8CCAA52DE1C3BD002495C8 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0F8CCAA62DE1C3C4002495C8 /* MainTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		0F8CCAA82DE1C59C002495C8 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				0F8CCAA92DE1C5A5002495C8 /* MainTableViewHeader.swift */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		0F8CCAAB2DE318A5002495C8 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				0F8CCAA82DE1C59C002495C8 /* Header */,
+				0F8CCAA52DE1C3BD002495C8 /* Cell */,
+				0F8CCAAC2DE318B1002495C8 /* MainTableView.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		0F8CCAAE2DE318CD002495C8 /* PickerView */ = {
+			isa = PBXGroup;
+			children = (
+				0F8CCAAF2DE318D4002495C8 /* MaskPickerView.swift */,
+			);
+			path = PickerView;
+			sourceTree = "<group>";
+		};
+		0F8CCAB42DE3B69A002495C8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0F8CCA9E2DE0DA6C002495C8 /* MainViewModel.swift */,
+				0F8CCABD2DE3B7C7002495C8 /* MainMaskViewModel.swift */,
+				0F8CCABF2DE3B7F4002495C8 /* MainTableViewModel.swift */,
+				0F8CCABB2DE3B6C9002495C8 /* MainViewModelMapper.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,7 +275,15 @@
 				0F8CCA882DE0D468002495C8 /* AppDelegate.swift in Sources */,
 				0F8CCA9D2DE0D944002495C8 /* MainModuleFactory.swift in Sources */,
 				0F8CCA892DE0D468002495C8 /* SceneDelegate.swift in Sources */,
-				0F8CCA982DE0D8DD002495C8 /* MainModel.swift in Sources */,
+				0F8CCAB32DE3B5C9002495C8 /* IPCalculationModel.swift in Sources */,
+				0F8CCABC2DE3B6D2002495C8 /* MainViewModelMapper.swift in Sources */,
+				0F8CCAA42DE10411002495C8 /* SubnetMaskModel.swift in Sources */,
+				0F8CCAAA2DE1C5B1002495C8 /* MainTableViewHeader.swift in Sources */,
+				0F8CCAC02DE3B801002495C8 /* MainTableViewModel.swift in Sources */,
+				0F8CCABE2DE3B7CC002495C8 /* MainMaskViewModel.swift in Sources */,
+				0F8CCAAD2DE318B6002495C8 /* MainTableView.swift in Sources */,
+				0F8CCAB02DE318D9002495C8 /* MaskPickerView.swift in Sources */,
+				0F8CCAA72DE1C3CB002495C8 /* MainTableViewCell.swift in Sources */,
 				0F8CCA8A2DE0D468002495C8 /* MainViewController.swift in Sources */,
 				0F8CCA962DE0D8D7002495C8 /* MainView.swift in Sources */,
 				0F8CCA932DE0D8BD002495C8 /* MainPresenter.swift in Sources */,
