@@ -1,23 +1,25 @@
 import UIKit
 
-final class MainTableViewCell: UITableViewCell {
+final class IPCalculatorTableViewHeader: UITableViewHeaderFooterView {
 
     // MARK: - Properties
 
-    static let identifier = "MainTableViewCell"
+    static let identifier = "IPCalculatorTableViewHeader"
 
     // MARK: - Outlets
 
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 18)
+        label.font = .systemFont(ofSize: 20, weight: .medium)
+        label.text = "Название"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 
     private let valueLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 18)
+        label.font = .systemFont(ofSize: 20, weight: .medium)
+        label.text = "Значение"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -31,8 +33,8 @@ final class MainTableViewCell: UITableViewCell {
 
     // MARK: - Initial
 
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    override init(reuseIdentifier: String?) {
+        super.init(reuseIdentifier: reuseIdentifier)
         setupHierarchy()
         setupLayout()
     }
@@ -45,7 +47,7 @@ final class MainTableViewCell: UITableViewCell {
 
 // MARK: - Setups
 
-private extension MainTableViewCell {
+private extension IPCalculatorTableViewHeader {
     func setupHierarchy() {
         contentView.addSubview(titleLabel)
         contentView.addSubview(valueLabel)
@@ -63,14 +65,5 @@ private extension MainTableViewCell {
             separator.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             separator.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
-    }
-}
-
-// MARK: - Configure
-
-extension MainTableViewCell {
-    func configuration(with row: MainTableViewModel) {
-        titleLabel.text = row.title
-        valueLabel.text = row.value
     }
 }
