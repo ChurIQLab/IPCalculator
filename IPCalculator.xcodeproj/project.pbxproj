@@ -9,22 +9,23 @@
 /* Begin PBXBuildFile section */
 		0F8CCA882DE0D468002495C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CCA7E2DE0D468002495C8 /* AppDelegate.swift */; };
 		0F8CCA892DE0D468002495C8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CCA852DE0D468002495C8 /* SceneDelegate.swift */; };
-		0F8CCA8A2DE0D468002495C8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CCA862DE0D468002495C8 /* MainViewController.swift */; };
+		0F8CCA8A2DE0D468002495C8 /* IPCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CCA862DE0D468002495C8 /* IPCalculatorViewController.swift */; };
 		0F8CCA8B2DE0D468002495C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F8CCA7F2DE0D468002495C8 /* Assets.xcassets */; };
 		0F8CCA8D2DE0D468002495C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F8CCA822DE0D468002495C8 /* LaunchScreen.storyboard */; };
-		0F8CCA932DE0D8BD002495C8 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CCA922DE0D8B3002495C8 /* MainPresenter.swift */; };
-		0F8CCA962DE0D8D7002495C8 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CCA952DE0D8D4002495C8 /* MainView.swift */; };
-		0F8CCA9D2DE0D944002495C8 /* MainModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CCA9C2DE0D93F002495C8 /* MainModuleFactory.swift */; };
-		0F8CCA9F2DE0DA71002495C8 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CCA9E2DE0DA6C002495C8 /* MainViewModel.swift */; };
+		0F8CCA932DE0D8BD002495C8 /* IPCalculatorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CCA922DE0D8B3002495C8 /* IPCalculatorPresenter.swift */; };
+		0F8CCA962DE0D8D7002495C8 /* IPCalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CCA952DE0D8D4002495C8 /* IPCalculatorView.swift */; };
+		0F8CCA9F2DE0DA71002495C8 /* IPCalculatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CCA9E2DE0DA6C002495C8 /* IPCalculatorViewModel.swift */; };
 		0F8CCAA42DE10411002495C8 /* SubnetMaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CCAA32DE1040A002495C8 /* SubnetMaskModel.swift */; };
-		0F8CCAA72DE1C3CB002495C8 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CCAA62DE1C3C4002495C8 /* MainTableViewCell.swift */; };
-		0F8CCAAA2DE1C5B1002495C8 /* MainTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CCAA92DE1C5A5002495C8 /* MainTableViewHeader.swift */; };
-		0F8CCAAD2DE318B6002495C8 /* MainTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CCAAC2DE318B1002495C8 /* MainTableView.swift */; };
-		0F8CCAB02DE318D9002495C8 /* MaskPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CCAAF2DE318D4002495C8 /* MaskPickerView.swift */; };
+		0F8CCAA72DE1C3CB002495C8 /* IPCalculatorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CCAA62DE1C3C4002495C8 /* IPCalculatorTableViewCell.swift */; };
+		0F8CCAAA2DE1C5B1002495C8 /* IPCalculatorTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CCAA92DE1C5A5002495C8 /* IPCalculatorTableViewHeader.swift */; };
+		0F8CCAAD2DE318B6002495C8 /* IPCalculatorTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CCAAC2DE318B1002495C8 /* IPCalculatorTableView.swift */; };
+		0F8CCAB02DE318D9002495C8 /* IPCalculatorMaskPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CCAAF2DE318D4002495C8 /* IPCalculatorMaskPickerView.swift */; };
 		0F8CCAB32DE3B5C9002495C8 /* IPCalculationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CCAB22DE3B5C8002495C8 /* IPCalculationModel.swift */; };
-		0F8CCABC2DE3B6D2002495C8 /* MainViewModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CCABB2DE3B6C9002495C8 /* MainViewModelMapper.swift */; };
-		0F8CCABE2DE3B7CC002495C8 /* MainMaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CCABD2DE3B7C7002495C8 /* MainMaskViewModel.swift */; };
-		0F8CCAC02DE3B801002495C8 /* MainTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CCABF2DE3B7F4002495C8 /* MainTableViewModel.swift */; };
+		0F8CCABE2DE3B7CC002495C8 /* IPCalculatorMaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CCABD2DE3B7C7002495C8 /* IPCalculatorMaskViewModel.swift */; };
+		0F8CCAC02DE3B801002495C8 /* IPCalculatorTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CCABF2DE3B7F4002495C8 /* IPCalculatorTableViewModel.swift */; };
+		0F8CCB3D2DE4DFB3002495C8 /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CCB3C2DE4DFAC002495C8 /* ModuleBuilder.swift */; };
+		0F8CCB402DE4F645002495C8 /* IPCalculationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CCB3F2DE4F63D002495C8 /* IPCalculationService.swift */; };
+		0F8CCB432DE65AE2002495C8 /* IPAddressFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CCB422DE65AD8002495C8 /* IPAddressFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,20 +35,21 @@
 		0F8CCA802DE0D468002495C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F8CCA812DE0D468002495C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0F8CCA852DE0D468002495C8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0F8CCA862DE0D468002495C8 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		0F8CCA922DE0D8B3002495C8 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
-		0F8CCA952DE0D8D4002495C8 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		0F8CCA9C2DE0D93F002495C8 /* MainModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModuleFactory.swift; sourceTree = "<group>"; };
-		0F8CCA9E2DE0DA6C002495C8 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		0F8CCA862DE0D468002495C8 /* IPCalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPCalculatorViewController.swift; sourceTree = "<group>"; };
+		0F8CCA922DE0D8B3002495C8 /* IPCalculatorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPCalculatorPresenter.swift; sourceTree = "<group>"; };
+		0F8CCA952DE0D8D4002495C8 /* IPCalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPCalculatorView.swift; sourceTree = "<group>"; };
+		0F8CCA9E2DE0DA6C002495C8 /* IPCalculatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPCalculatorViewModel.swift; sourceTree = "<group>"; };
 		0F8CCAA32DE1040A002495C8 /* SubnetMaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubnetMaskModel.swift; sourceTree = "<group>"; };
-		0F8CCAA62DE1C3C4002495C8 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
-		0F8CCAA92DE1C5A5002495C8 /* MainTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewHeader.swift; sourceTree = "<group>"; };
-		0F8CCAAC2DE318B1002495C8 /* MainTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableView.swift; sourceTree = "<group>"; };
-		0F8CCAAF2DE318D4002495C8 /* MaskPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskPickerView.swift; sourceTree = "<group>"; };
+		0F8CCAA62DE1C3C4002495C8 /* IPCalculatorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPCalculatorTableViewCell.swift; sourceTree = "<group>"; };
+		0F8CCAA92DE1C5A5002495C8 /* IPCalculatorTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPCalculatorTableViewHeader.swift; sourceTree = "<group>"; };
+		0F8CCAAC2DE318B1002495C8 /* IPCalculatorTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPCalculatorTableView.swift; sourceTree = "<group>"; };
+		0F8CCAAF2DE318D4002495C8 /* IPCalculatorMaskPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPCalculatorMaskPickerView.swift; sourceTree = "<group>"; };
 		0F8CCAB22DE3B5C8002495C8 /* IPCalculationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPCalculationModel.swift; sourceTree = "<group>"; };
-		0F8CCABB2DE3B6C9002495C8 /* MainViewModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModelMapper.swift; sourceTree = "<group>"; };
-		0F8CCABD2DE3B7C7002495C8 /* MainMaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMaskViewModel.swift; sourceTree = "<group>"; };
-		0F8CCABF2DE3B7F4002495C8 /* MainTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewModel.swift; sourceTree = "<group>"; };
+		0F8CCABD2DE3B7C7002495C8 /* IPCalculatorMaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPCalculatorMaskViewModel.swift; sourceTree = "<group>"; };
+		0F8CCABF2DE3B7F4002495C8 /* IPCalculatorTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPCalculatorTableViewModel.swift; sourceTree = "<group>"; };
+		0F8CCB3C2DE4DFAC002495C8 /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
+		0F8CCB3F2DE4F63D002495C8 /* IPCalculationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPCalculationService.swift; sourceTree = "<group>"; };
+		0F8CCB422DE65AD8002495C8 /* IPAddressFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPAddressFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,21 +111,12 @@
 		0F8CCA912DE0D487002495C8 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				0F8CCA942DE0D8C8002495C8 /* MainModule */,
+				0F8CCB3A2DE4DF85002495C8 /* Modules */,
+				0F8CCB3E2DE4E168002495C8 /* Models */,
+				0F8CCB392DE4DF02002495C8 /* Services */,
+				0F8CCB412DE65AC1002495C8 /* Utils */,
 			);
 			path = Sources;
-			sourceTree = "<group>";
-		};
-		0F8CCA942DE0D8C8002495C8 /* MainModule */ = {
-			isa = PBXGroup;
-			children = (
-				0F8CCA9C2DE0D93F002495C8 /* MainModuleFactory.swift */,
-				0F8CCA992DE0D8E5002495C8 /* View */,
-				0F8CCAB42DE3B69A002495C8 /* ViewModel */,
-				0F8CCA9A2DE0D8ED002495C8 /* Model */,
-				0F8CCA9B2DE0D8F3002495C8 /* Presenter */,
-			);
-			path = MainModule;
 			sourceTree = "<group>";
 		};
 		0F8CCA992DE0D8E5002495C8 /* View */ = {
@@ -131,25 +124,16 @@
 			children = (
 				0F8CCAAE2DE318CD002495C8 /* PickerView */,
 				0F8CCAAB2DE318A5002495C8 /* TableView */,
-				0F8CCA952DE0D8D4002495C8 /* MainView.swift */,
-				0F8CCA862DE0D468002495C8 /* MainViewController.swift */,
+				0F8CCA952DE0D8D4002495C8 /* IPCalculatorView.swift */,
+				0F8CCA862DE0D468002495C8 /* IPCalculatorViewController.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		0F8CCA9A2DE0D8ED002495C8 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				0F8CCAA32DE1040A002495C8 /* SubnetMaskModel.swift */,
-				0F8CCAB22DE3B5C8002495C8 /* IPCalculationModel.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		0F8CCA9B2DE0D8F3002495C8 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				0F8CCA922DE0D8B3002495C8 /* MainPresenter.swift */,
+				0F8CCA922DE0D8B3002495C8 /* IPCalculatorPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -157,7 +141,7 @@
 		0F8CCAA52DE1C3BD002495C8 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				0F8CCAA62DE1C3C4002495C8 /* MainTableViewCell.swift */,
+				0F8CCAA62DE1C3C4002495C8 /* IPCalculatorTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -165,7 +149,7 @@
 		0F8CCAA82DE1C59C002495C8 /* Header */ = {
 			isa = PBXGroup;
 			children = (
-				0F8CCAA92DE1C5A5002495C8 /* MainTableViewHeader.swift */,
+				0F8CCAA92DE1C5A5002495C8 /* IPCalculatorTableViewHeader.swift */,
 			);
 			path = Header;
 			sourceTree = "<group>";
@@ -175,7 +159,7 @@
 			children = (
 				0F8CCAA82DE1C59C002495C8 /* Header */,
 				0F8CCAA52DE1C3BD002495C8 /* Cell */,
-				0F8CCAAC2DE318B1002495C8 /* MainTableView.swift */,
+				0F8CCAAC2DE318B1002495C8 /* IPCalculatorTableView.swift */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -183,7 +167,7 @@
 		0F8CCAAE2DE318CD002495C8 /* PickerView */ = {
 			isa = PBXGroup;
 			children = (
-				0F8CCAAF2DE318D4002495C8 /* MaskPickerView.swift */,
+				0F8CCAAF2DE318D4002495C8 /* IPCalculatorMaskPickerView.swift */,
 			);
 			path = PickerView;
 			sourceTree = "<group>";
@@ -191,12 +175,55 @@
 		0F8CCAB42DE3B69A002495C8 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				0F8CCA9E2DE0DA6C002495C8 /* MainViewModel.swift */,
-				0F8CCABD2DE3B7C7002495C8 /* MainMaskViewModel.swift */,
-				0F8CCABF2DE3B7F4002495C8 /* MainTableViewModel.swift */,
-				0F8CCABB2DE3B6C9002495C8 /* MainViewModelMapper.swift */,
+				0F8CCA9E2DE0DA6C002495C8 /* IPCalculatorViewModel.swift */,
+				0F8CCABD2DE3B7C7002495C8 /* IPCalculatorMaskViewModel.swift */,
+				0F8CCABF2DE3B7F4002495C8 /* IPCalculatorTableViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0F8CCB392DE4DF02002495C8 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				0F8CCB3F2DE4F63D002495C8 /* IPCalculationService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		0F8CCB3A2DE4DF85002495C8 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				0F8CCB3C2DE4DFAC002495C8 /* ModuleBuilder.swift */,
+				0F8CCB3B2DE4DF96002495C8 /* IPCalculatorModule */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		0F8CCB3B2DE4DF96002495C8 /* IPCalculatorModule */ = {
+			isa = PBXGroup;
+			children = (
+				0F8CCA992DE0D8E5002495C8 /* View */,
+				0F8CCAB42DE3B69A002495C8 /* ViewModel */,
+				0F8CCA9B2DE0D8F3002495C8 /* Presenter */,
+			);
+			path = IPCalculatorModule;
+			sourceTree = "<group>";
+		};
+		0F8CCB3E2DE4E168002495C8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0F8CCAA32DE1040A002495C8 /* SubnetMaskModel.swift */,
+				0F8CCAB22DE3B5C8002495C8 /* IPCalculationModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0F8CCB412DE65AC1002495C8 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				0F8CCB422DE65AD8002495C8 /* IPAddressFormatter.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,21 +300,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F8CCA882DE0D468002495C8 /* AppDelegate.swift in Sources */,
-				0F8CCA9D2DE0D944002495C8 /* MainModuleFactory.swift in Sources */,
 				0F8CCA892DE0D468002495C8 /* SceneDelegate.swift in Sources */,
 				0F8CCAB32DE3B5C9002495C8 /* IPCalculationModel.swift in Sources */,
-				0F8CCABC2DE3B6D2002495C8 /* MainViewModelMapper.swift in Sources */,
+				0F8CCB3D2DE4DFB3002495C8 /* ModuleBuilder.swift in Sources */,
 				0F8CCAA42DE10411002495C8 /* SubnetMaskModel.swift in Sources */,
-				0F8CCAAA2DE1C5B1002495C8 /* MainTableViewHeader.swift in Sources */,
-				0F8CCAC02DE3B801002495C8 /* MainTableViewModel.swift in Sources */,
-				0F8CCABE2DE3B7CC002495C8 /* MainMaskViewModel.swift in Sources */,
-				0F8CCAAD2DE318B6002495C8 /* MainTableView.swift in Sources */,
-				0F8CCAB02DE318D9002495C8 /* MaskPickerView.swift in Sources */,
-				0F8CCAA72DE1C3CB002495C8 /* MainTableViewCell.swift in Sources */,
-				0F8CCA8A2DE0D468002495C8 /* MainViewController.swift in Sources */,
-				0F8CCA962DE0D8D7002495C8 /* MainView.swift in Sources */,
-				0F8CCA932DE0D8BD002495C8 /* MainPresenter.swift in Sources */,
-				0F8CCA9F2DE0DA71002495C8 /* MainViewModel.swift in Sources */,
+				0F8CCAAA2DE1C5B1002495C8 /* IPCalculatorTableViewHeader.swift in Sources */,
+				0F8CCAC02DE3B801002495C8 /* IPCalculatorTableViewModel.swift in Sources */,
+				0F8CCABE2DE3B7CC002495C8 /* IPCalculatorMaskViewModel.swift in Sources */,
+				0F8CCAAD2DE318B6002495C8 /* IPCalculatorTableView.swift in Sources */,
+				0F8CCAB02DE318D9002495C8 /* IPCalculatorMaskPickerView.swift in Sources */,
+				0F8CCB402DE4F645002495C8 /* IPCalculationService.swift in Sources */,
+				0F8CCAA72DE1C3CB002495C8 /* IPCalculatorTableViewCell.swift in Sources */,
+				0F8CCA8A2DE0D468002495C8 /* IPCalculatorViewController.swift in Sources */,
+				0F8CCA962DE0D8D7002495C8 /* IPCalculatorView.swift in Sources */,
+				0F8CCA932DE0D8BD002495C8 /* IPCalculatorPresenter.swift in Sources */,
+				0F8CCB432DE65AE2002495C8 /* IPAddressFormatter.swift in Sources */,
+				0F8CCA9F2DE0DA71002495C8 /* IPCalculatorViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

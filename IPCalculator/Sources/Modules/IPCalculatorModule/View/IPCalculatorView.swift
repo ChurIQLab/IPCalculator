@@ -1,18 +1,18 @@
 import UIKit
 
-protocol MainViewDelegate: AnyObject {
+protocol IPCalculatorViewDelegate: AnyObject {
     func didTapCalculate(with ip: String?)
     func didSelectMask(at index: Int)
 }
 
-final class MainView: UIView {
+final class IPCalculatorView: UIView {
 
     // MARK: - Properties
 
-    weak var delegate: MainViewDelegate?
+    weak var delegate: IPCalculatorViewDelegate?
 
-    private let mainTableView = MainTableView()
-    private let maskPickerView = MaskPickerView()
+    private let mainTableView = IPCalculatorTableView()
+    private let maskPickerView = IPCalculatorMaskPickerView()
 
     // MARK: - Outlets
 
@@ -88,6 +88,7 @@ final class MainView: UIView {
 
     private lazy var tableView: UITableView = {
         let table = mainTableView.tableView
+        table.isHidden = true
         table.translatesAutoresizingMaskIntoConstraints = false
         return table
     }()
@@ -110,7 +111,7 @@ final class MainView: UIView {
 
 // MARK: - Setup
 
-private extension MainView {
+private extension IPCalculatorView {
     func setupView() {
         backgroundColor = .white
     }
@@ -152,7 +153,7 @@ private extension MainView {
 
 // MARK: - Actions objc
 
-private extension MainView {
+private extension IPCalculatorView {
     @objc func doneTapped() {
         textFieldMask.resignFirstResponder()
     }
@@ -160,9 +161,9 @@ private extension MainView {
 
 // MARK: - Public func
 
-extension MainView {
-    func configuration(with model: MainViewModel) {
-        mainTableView.configuration(with: model.resultRows)
+extension IPCalculatorView {
+    func configuration(with model: IPCalculatorViewModel) {
+        mainTableView.configuration(with: model.rows)
     }
 
     func updateTextFieldMask(text: String) {
@@ -173,14 +174,16 @@ extension MainView {
         maskPickerView.configuration(with: options)
     }
 
-    func setSelectedRow(_ row: Int) {
-        pickerView.selectRow(row, inComponent: 0, animated: false)
+    func showTableView() {
+        UIView.animate(withDuration: 0.3) { [weak self] in
+            self?.tableView.isHidden = false
+        }
     }
 }
 
 // MARK: - Delegate
 
-extension MainView: MaskPickerViewDelegate {
+extension IPCalculatorView: MaskPickerViewDelegate {
     func didSelectRow(_ row: Int) {
         delegate?.didSelectMask(at: row)
     }

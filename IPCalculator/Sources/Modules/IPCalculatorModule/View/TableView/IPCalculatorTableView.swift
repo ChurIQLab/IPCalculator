@@ -1,18 +1,18 @@
 import UIKit
 
-final class MainTableView: UIView {
+final class IPCalculatorTableView: UIView {
 
     // MARK: - Properties
 
-    private var rows: [MainTableViewModel] = []
+    private var rows: [IPCalculatorTableViewModel] = []
 
     // MARK: - Outlets
 
     private(set) lazy var tableView: UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
 
-        table.register(MainTableViewCell.self, forCellReuseIdentifier: MainTableViewCell.identifier)
-        table.register(MainTableViewHeader.self, forHeaderFooterViewReuseIdentifier: MainTableViewHeader.identifier)
+        table.register(IPCalculatorTableViewCell.self, forCellReuseIdentifier: IPCalculatorTableViewCell.identifier)
+        table.register(IPCalculatorTableViewHeader.self, forHeaderFooterViewReuseIdentifier: IPCalculatorTableViewHeader.identifier)
 
         table.dataSource = self
         table.delegate = self
@@ -47,7 +47,7 @@ final class MainTableView: UIView {
 
 // MARK: - Setups
 
-private extension MainTableView {
+private extension IPCalculatorTableView {
     func setupHierarchy() {
         addSubview(tableView)
     }
@@ -64,8 +64,8 @@ private extension MainTableView {
 
 // MARK: - Public methods
 
-extension MainTableView {
-    func configuration(with rows: [MainTableViewModel]) {
+extension IPCalculatorTableView {
+    func configuration(with rows: [IPCalculatorTableViewModel]) {
         self.rows = rows
         tableView.reloadData()
     }
@@ -73,11 +73,11 @@ extension MainTableView {
 
 // MARK: - Delegate
 
-extension MainTableView: UITableViewDelegate {
+extension IPCalculatorTableView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let view = tableView.dequeueReusableHeaderFooterView(
-                withIdentifier: MainTableViewHeader.identifier
-            ) as? MainTableViewHeader else { return nil }
+                withIdentifier: IPCalculatorTableViewHeader.identifier
+            ) as? IPCalculatorTableViewHeader else { return nil }
         return view
     }
 
@@ -92,14 +92,14 @@ extension MainTableView: UITableViewDelegate {
 
 // MARK: - DataSource
 
-extension MainTableView: UITableViewDataSource {
+extension IPCalculatorTableView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return rows.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: MainTableViewCell.identifier,
-                                                     for: indexPath) as? MainTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: IPCalculatorTableViewCell.identifier,
+                                                     for: indexPath) as? IPCalculatorTableViewCell else {
             return UITableViewCell()
         }
         let row = rows[indexPath.row]

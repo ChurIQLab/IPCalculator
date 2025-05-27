@@ -1,17 +1,17 @@
 import UIKit
 
-protocol MainViewProtocol: AnyObject {
-    func display(with model: MainViewModel)
+protocol IPCalculatorViewProtocol: AnyObject {
+    func display(with model: IPCalculatorViewModel)
     func updateSelectMaskText(_ text: String)
     func setAvailableMasks(_ masks: [String])
 }
 
-final class MainViewController: UIViewController {
+final class IPCalculatorViewController: UIViewController {
 
     // MARK: - Properties
 
-    private let presenter: MainPresenterProtocol
-    private lazy var customView = MainView()
+    private let presenter: IPCalculatorProtocol
+    private lazy var customView = IPCalculatorView()
 
     // MARK: - Lifecycle
 
@@ -31,7 +31,7 @@ final class MainViewController: UIViewController {
 
     // MARK: - Initial
 
-    init(presenter: MainPresenterProtocol) {
+    init(presenter: IPCalculatorProtocol) {
         self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
     }
@@ -44,7 +44,7 @@ final class MainViewController: UIViewController {
 
 // MARK: - Setup
 
-private extension MainViewController {
+private extension IPCalculatorViewController {
     func setupTitle() {
         title = "IP Калькулятор"
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -58,17 +58,18 @@ private extension MainViewController {
 
 // MARK: - Objc Action
 
-private extension MainViewController {
+private extension IPCalculatorViewController {
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
 }
 
-// MARK: - MainViewProtocol
+// MARK: - IPCalculatorViewProtocol
 
-extension MainViewController: MainViewProtocol {
-    func display(with model: MainViewModel) {
+extension IPCalculatorViewController: IPCalculatorViewProtocol {
+    func display(with model: IPCalculatorViewModel) {
         customView.configuration(with: model)
+        customView.showTableView()
     }
 
     func updateSelectMaskText(_ text: String) {
@@ -82,7 +83,7 @@ extension MainViewController: MainViewProtocol {
 
 // MARK: - Delegate
 
-extension MainViewController: MainViewDelegate {
+extension IPCalculatorViewController: IPCalculatorViewDelegate {
     func didTapCalculate(with ip: String?) {
         guard let ip = ip else { return }
         presenter.didTapCalculate(with: ip)

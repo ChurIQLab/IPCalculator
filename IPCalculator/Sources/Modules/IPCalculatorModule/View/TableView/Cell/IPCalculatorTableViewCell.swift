@@ -1,25 +1,23 @@
 import UIKit
 
-final class MainTableViewHeader: UITableViewHeaderFooterView {
+final class IPCalculatorTableViewCell: UITableViewCell {
 
     // MARK: - Properties
 
-    static let identifier = "MainTableViewHeader"
+    static let identifier = "IPCalculatorTableViewCell"
 
     // MARK: - Outlets
 
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 20, weight: .medium)
-        label.text = "Название"
+        label.font = .systemFont(ofSize: 18)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 
     private let valueLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 20, weight: .medium)
-        label.text = "Значение"
+        label.font = .systemFont(ofSize: 18)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -33,8 +31,8 @@ final class MainTableViewHeader: UITableViewHeaderFooterView {
 
     // MARK: - Initial
 
-    override init(reuseIdentifier: String?) {
-        super.init(reuseIdentifier: reuseIdentifier)
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupHierarchy()
         setupLayout()
     }
@@ -47,7 +45,7 @@ final class MainTableViewHeader: UITableViewHeaderFooterView {
 
 // MARK: - Setups
 
-private extension MainTableViewHeader {
+private extension IPCalculatorTableViewCell {
     func setupHierarchy() {
         contentView.addSubview(titleLabel)
         contentView.addSubview(valueLabel)
@@ -65,5 +63,14 @@ private extension MainTableViewHeader {
             separator.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             separator.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
+    }
+}
+
+// MARK: - Configure
+
+extension IPCalculatorTableViewCell {
+    func configuration(with row: IPCalculatorTableViewModel) {
+        titleLabel.text = row.title
+        valueLabel.text = row.value
     }
 }

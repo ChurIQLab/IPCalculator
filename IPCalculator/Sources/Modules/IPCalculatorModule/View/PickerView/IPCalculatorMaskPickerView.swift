@@ -4,7 +4,7 @@ protocol MaskPickerViewDelegate: AnyObject {
     func didSelectRow(_ row: Int)
 }
 
-final class MaskPickerView: UIView {
+final class IPCalculatorMaskPickerView: UIView {
 
     // MARK: - Properties
 
@@ -38,7 +38,7 @@ final class MaskPickerView: UIView {
 
 // MARK: - Public methods
 
-extension MaskPickerView {
+extension IPCalculatorMaskPickerView {
     func configuration(with options: [String]) {
         self.options = options
         pickerView.reloadAllComponents()
@@ -47,7 +47,7 @@ extension MaskPickerView {
 
 // MARK: - Setup
 
-private extension MaskPickerView {
+private extension IPCalculatorMaskPickerView {
     func setupHierarchy() {
         addSubview(pickerView)
     }
@@ -64,7 +64,7 @@ private extension MaskPickerView {
 
 // MARK: - DataSource
 
-extension MaskPickerView: UIPickerViewDataSource {
+extension IPCalculatorMaskPickerView: UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -76,7 +76,7 @@ extension MaskPickerView: UIPickerViewDataSource {
 
 // MARK: - Delegate
 
-extension MaskPickerView: UIPickerViewDelegate {
+extension IPCalculatorMaskPickerView: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         guard !options.isEmpty else { return nil }
         return options[row]

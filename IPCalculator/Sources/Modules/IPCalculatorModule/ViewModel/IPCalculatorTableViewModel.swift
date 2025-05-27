@@ -1,6 +1,6 @@
 import Foundation
 
-struct MainTableViewModel {
+struct IPCalculatorTableViewModel {
     let title: String
     let value: String
 }
