@@ -10,16 +10,20 @@ final class IPCalculatorTableViewHeader: UITableViewHeaderFooterView {
 
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 20, weight: .medium)
-        label.text = "Name"
+        label.applyScaledFont(size: UIConstants.FontSize.title,
+                              weight: .medium,
+                              textStyle: .body)
+        label.text = UIConstants.Text.nameLabel
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 
     private let valueLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 20, weight: .medium)
-        label.text = "Value"
+        label.applyScaledFont(size: UIConstants.FontSize.title,
+                              weight: .medium,
+                              textStyle: .body)
+        label.text = UIConstants.Text.valueLabel
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -56,11 +60,13 @@ private extension IPCalculatorTableViewHeader {
 
     func setupLayout() {
         NSLayoutConstraint.activate([
-            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,
+                                                constant: UIConstants.Spacing.cellHorizonal),
             titleLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            valueLabel.leadingAnchor.constraint(equalTo: contentView.centerXAnchor, constant: 16),
+            valueLabel.leadingAnchor.constraint(equalTo: contentView.centerXAnchor,
+                                                constant: UIConstants.Spacing.cellHorizonal),
             valueLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            separator.widthAnchor.constraint(equalToConstant: 1),
+            separator.widthAnchor.constraint(equalToConstant: UIConstants.Size.borderWidth),
             separator.topAnchor.constraint(equalTo: contentView.topAnchor),
             separator.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             separator.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)

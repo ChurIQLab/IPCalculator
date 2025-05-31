@@ -10,6 +10,7 @@ final class IPCalculatorMaskPickerView: UIView {
 
     weak var delegate: MaskPickerViewDelegate?
 
+    private let numberOfComponents: Int = 1
     private var options: [String] = []
 
     // MARK: - Outlets
@@ -66,7 +67,7 @@ private extension IPCalculatorMaskPickerView {
 
 extension IPCalculatorMaskPickerView: UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
+        return numberOfComponents
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
