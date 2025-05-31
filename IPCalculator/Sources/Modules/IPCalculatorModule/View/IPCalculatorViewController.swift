@@ -22,7 +22,7 @@ final class IPCalculatorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupTitle()
+        setupNavigationTitle()
         setupTapGesture()
 
         customView.delegate = self
@@ -45,8 +45,8 @@ final class IPCalculatorViewController: UIViewController {
 // MARK: - Setup
 
 private extension IPCalculatorViewController {
-    func setupTitle() {
-        title = UIConstants.Text.title
+    func setupNavigationTitle() {
+        navigationItem.titleView = NavigationTitleView()
         navigationController?.navigationBar.prefersLargeTitles = true
     }
 

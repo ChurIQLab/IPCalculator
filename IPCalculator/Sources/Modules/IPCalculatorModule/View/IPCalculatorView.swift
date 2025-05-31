@@ -140,8 +140,7 @@ private extension IPCalculatorView {
 
     func setupLayout() {
         NSLayoutConstraint.activate([
-            labelIP.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor,
-                                         constant: UIConstants.Spacing.screenVertial),
+            labelIP.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             labelIP.leadingAnchor.constraint(equalTo: leadingAnchor,
                                              constant: UIConstants.Spacing.screenHorizontal),
             textFieldIP.topAnchor.constraint(equalTo: labelIP.bottomAnchor,
