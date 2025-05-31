@@ -10,6 +10,7 @@
 		0F80A77A2DEB08BD00409869 /* Extension+UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F80A7792DEB08A900409869 /* Extension+UIFont.swift */; };
 		0F80A77D2DEB0AF400409869 /* UIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F80A77C2DEB0AF100409869 /* UIConstants.swift */; };
 		0F80A77F2DEB0E2D00409869 /* UIScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F80A77E2DEB0E2300409869 /* UIScale.swift */; };
+		0F80A7822DEB153000409869 /* Extension+UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F80A7812DEB152900409869 /* Extension+UITextField.swift */; };
 		0F8CCA882DE0D468002495C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CCA7E2DE0D468002495C8 /* AppDelegate.swift */; };
 		0F8CCA892DE0D468002495C8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CCA852DE0D468002495C8 /* SceneDelegate.swift */; };
 		0F8CCA8A2DE0D468002495C8 /* IPCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CCA862DE0D468002495C8 /* IPCalculatorViewController.swift */; };
@@ -35,6 +36,7 @@
 		0F80A7792DEB08A900409869 /* Extension+UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIFont.swift"; sourceTree = "<group>"; };
 		0F80A77C2DEB0AF100409869 /* UIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstants.swift; sourceTree = "<group>"; };
 		0F80A77E2DEB0E2300409869 /* UIScale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScale.swift; sourceTree = "<group>"; };
+		0F80A7812DEB152900409869 /* Extension+UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UITextField.swift"; sourceTree = "<group>"; };
 		0F8CCA662DE0D45A002495C8 /* IPCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IPCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F8CCA7E2DE0D468002495C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F8CCA7F2DE0D468002495C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 		0F80A7782DEB08A000409869 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				0F80A7812DEB152900409869 /* Extension+UITextField.swift */,
 				0F80A7792DEB08A900409869 /* Extension+UIFont.swift */,
 			);
 			path = Extensions;
@@ -345,6 +348,7 @@
 				0F8CCAAD2DE318B6002495C8 /* IPCalculatorTableView.swift in Sources */,
 				0F8CCAB02DE318D9002495C8 /* IPCalculatorMaskPickerView.swift in Sources */,
 				0F8CCB402DE4F645002495C8 /* IPCalculationService.swift in Sources */,
+				0F80A7822DEB153000409869 /* Extension+UITextField.swift in Sources */,
 				0F8CCAA72DE1C3CB002495C8 /* IPCalculatorTableViewCell.swift in Sources */,
 				0F80A77D2DEB0AF400409869 /* UIConstants.swift in Sources */,
 				0F8CCA8A2DE0D468002495C8 /* IPCalculatorViewController.swift in Sources */,
