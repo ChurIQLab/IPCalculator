@@ -10,14 +10,18 @@ final class IPCalculatorTableViewCell: UITableViewCell {
 
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 18)
+        label.applyScaledFont(size: UIConstants.FontSize.body,
+                              weight: .medium,
+                              textStyle: .body)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 
     private let valueLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 18)
+        label.applyScaledFont(size: UIConstants.FontSize.body,
+                              weight: .medium,
+                              textStyle: .body)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -54,11 +58,13 @@ private extension IPCalculatorTableViewCell {
 
     func setupLayout() {
         NSLayoutConstraint.activate([
-            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,
+                                                constant: UIConstants.Spacing.cellHorizonal),
             titleLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            valueLabel.leadingAnchor.constraint(equalTo: contentView.centerXAnchor, constant: 16),
+            valueLabel.leadingAnchor.constraint(equalTo: contentView.centerXAnchor,
+                                                constant: UIConstants.Spacing.cellHorizonal),
             valueLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            separator.widthAnchor.constraint(equalToConstant: 1),
+            separator.widthAnchor.constraint(equalToConstant: UIConstants.Size.borderWidth),
             separator.topAnchor.constraint(equalTo: contentView.topAnchor),
             separator.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             separator.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)

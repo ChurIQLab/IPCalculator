@@ -11,8 +11,10 @@ final class IPCalculatorTableView: UIView {
     private(set) lazy var tableView: UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
 
-        table.register(IPCalculatorTableViewCell.self, forCellReuseIdentifier: IPCalculatorTableViewCell.identifier)
-        table.register(IPCalculatorTableViewHeader.self, forHeaderFooterViewReuseIdentifier: IPCalculatorTableViewHeader.identifier)
+        table.register(IPCalculatorTableViewCell.self,
+                       forCellReuseIdentifier: IPCalculatorTableViewCell.identifier)
+        table.register(IPCalculatorTableViewHeader.self,
+                       forHeaderFooterViewReuseIdentifier: IPCalculatorTableViewHeader.identifier)
 
         table.dataSource = self
         table.delegate = self
@@ -20,8 +22,8 @@ final class IPCalculatorTableView: UIView {
         table.allowsSelection = false
         table.isScrollEnabled = false
 
-        table.layer.cornerRadius = 8
-        table.layer.borderWidth = 1
+        table.layer.cornerRadius = UIConstants.CornerRadius.normal
+        table.layer.borderWidth = UIConstants.Size.borderWidth
         table.layer.borderColor = UIColor.systemGray5.cgColor
 
         table.separatorInset = .zero

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F80A77A2DEB08BD00409869 /* Extension+UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F80A7792DEB08A900409869 /* Extension+UIFont.swift */; };
+		0F80A77D2DEB0AF400409869 /* UIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F80A77C2DEB0AF100409869 /* UIConstants.swift */; };
+		0F80A77F2DEB0E2D00409869 /* UIScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F80A77E2DEB0E2300409869 /* UIScale.swift */; };
 		0F8CCA882DE0D468002495C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CCA7E2DE0D468002495C8 /* AppDelegate.swift */; };
 		0F8CCA892DE0D468002495C8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CCA852DE0D468002495C8 /* SceneDelegate.swift */; };
 		0F8CCA8A2DE0D468002495C8 /* IPCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CCA862DE0D468002495C8 /* IPCalculatorViewController.swift */; };
@@ -29,6 +32,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F80A7792DEB08A900409869 /* Extension+UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIFont.swift"; sourceTree = "<group>"; };
+		0F80A77C2DEB0AF100409869 /* UIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstants.swift; sourceTree = "<group>"; };
+		0F80A77E2DEB0E2300409869 /* UIScale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScale.swift; sourceTree = "<group>"; };
 		0F8CCA662DE0D45A002495C8 /* IPCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IPCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F8CCA7E2DE0D468002495C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F8CCA7F2DE0D468002495C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -63,6 +69,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F80A7782DEB08A000409869 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0F80A7792DEB08A900409869 /* Extension+UIFont.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0F80A77B2DEB0AE500409869 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				0F80A77C2DEB0AF100409869 /* UIConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		0F80A7802DEB0EDF00409869 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0F80A77E2DEB0E2300409869 /* UIScale.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		0F8CCA5D2DE0D45A002495C8 = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +141,9 @@
 		0F8CCA912DE0D487002495C8 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				0F80A7782DEB08A000409869 /* Extensions */,
+				0F80A77B2DEB0AE500409869 /* Constants */,
+				0F80A7802DEB0EDF00409869 /* Helpers */,
 				0F8CCB3A2DE4DF85002495C8 /* Modules */,
 				0F8CCB3E2DE4E168002495C8 /* Models */,
 				0F8CCB392DE4DF02002495C8 /* Services */,
@@ -303,7 +336,9 @@
 				0F8CCA892DE0D468002495C8 /* SceneDelegate.swift in Sources */,
 				0F8CCAB32DE3B5C9002495C8 /* IPCalculationModel.swift in Sources */,
 				0F8CCB3D2DE4DFB3002495C8 /* ModuleBuilder.swift in Sources */,
+				0F80A77A2DEB08BD00409869 /* Extension+UIFont.swift in Sources */,
 				0F8CCAA42DE10411002495C8 /* SubnetMaskModel.swift in Sources */,
+				0F80A77F2DEB0E2D00409869 /* UIScale.swift in Sources */,
 				0F8CCAAA2DE1C5B1002495C8 /* IPCalculatorTableViewHeader.swift in Sources */,
 				0F8CCAC02DE3B801002495C8 /* IPCalculatorTableViewModel.swift in Sources */,
 				0F8CCABE2DE3B7CC002495C8 /* IPCalculatorMaskViewModel.swift in Sources */,
@@ -311,6 +346,7 @@
 				0F8CCAB02DE318D9002495C8 /* IPCalculatorMaskPickerView.swift in Sources */,
 				0F8CCB402DE4F645002495C8 /* IPCalculationService.swift in Sources */,
 				0F8CCAA72DE1C3CB002495C8 /* IPCalculatorTableViewCell.swift in Sources */,
+				0F80A77D2DEB0AF400409869 /* UIConstants.swift in Sources */,
 				0F8CCA8A2DE0D468002495C8 /* IPCalculatorViewController.swift in Sources */,
 				0F8CCA962DE0D8D7002495C8 /* IPCalculatorView.swift in Sources */,
 				0F8CCA932DE0D8BD002495C8 /* IPCalculatorPresenter.swift in Sources */,

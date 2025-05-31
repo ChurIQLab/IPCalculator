@@ -18,17 +18,22 @@ final class IPCalculatorView: UIView {
 
     private let labelIP: UILabel = {
         let label = UILabel()
-        label.text = "IP address"
-        label.font = .systemFont(ofSize: 20, weight: .medium)
+        label.text = UIConstants.Text.ipLabel
+        label.applyScaledFont(size: UIConstants.FontSize.title,
+                              weight: .medium,
+                              textStyle: .body)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 
     private let textFieldIP: UITextField = {
         let field = UITextField()
+        field.placeholder = UIConstants.Text.ipPlaceholder
         field.borderStyle = .roundedRect
-        field.layer.cornerRadius = 8
-        field.font = .systemFont(ofSize: 20)
+        field.layer.cornerRadius = UIConstants.CornerRadius.normal
+        field.applyScaledFont(size: UIConstants.FontSize.title,
+                              weight: .regular,
+                              textStyle: .body)
         field.keyboardType = .numbersAndPunctuation
         field.translatesAutoresizingMaskIntoConstraints = false
         return field
@@ -36,17 +41,22 @@ final class IPCalculatorView: UIView {
 
     private let labelMask: UILabel = {
         let label = UILabel()
-        label.text = "Netmask"
-        label.font = .systemFont(ofSize: 20, weight: .medium)
+        label.text = UIConstants.Text.maskLabel
+        label.applyScaledFont(size: UIConstants.FontSize.title,
+                              weight: .medium,
+                              textStyle: .body)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 
     private lazy var textFieldMask: UITextField = {
         let field = UITextField()
+        field.placeholder = UIConstants.Text.maskPlaceholder
         field.borderStyle = .roundedRect
-        field.layer.cornerRadius = 8
-        field.font = .systemFont(ofSize: 20)
+        field.layer.cornerRadius = UIConstants.CornerRadius.normal
+        field.applyScaledFont(size: UIConstants.FontSize.title,
+                              weight: .regular,
+                              textStyle: .body)
         field.inputView = pickerView
         field.inputAccessoryView = toolbar
         field.translatesAutoresizingMaskIntoConstraints = false
@@ -68,11 +78,13 @@ final class IPCalculatorView: UIView {
 
     private lazy var buttonCalculate: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Calculate", for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 20, weight: .bold)
+        button.setTitle(UIConstants.Text.calculateButton, for: .normal)
+        button.titleLabel?.applyScaledFont(size: UIConstants.FontSize.title,
+                                           weight: .bold,
+                                           textStyle: .body)
         button.tintColor = .white
         button.backgroundColor = .systemBlue
-        button.layer.cornerRadius = 8
+        button.layer.cornerRadius = UIConstants.CornerRadius.button
 
         button.addAction(
             UIAction { [weak self] _ in
@@ -127,26 +139,43 @@ private extension IPCalculatorView {
 
     func setupLayout() {
         NSLayoutConstraint.activate([
-            labelIP.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
-            labelIP.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            textFieldIP.topAnchor.constraint(equalTo: labelIP.bottomAnchor, constant: 10),
-            textFieldIP.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            textFieldIP.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            textFieldIP.heightAnchor.constraint(equalToConstant: 50),
-            labelMask.topAnchor.constraint(equalTo: textFieldIP.bottomAnchor, constant: 20),
-            labelMask.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            textFieldMask.topAnchor.constraint(equalTo: labelMask.bottomAnchor, constant: 10),
-            textFieldMask.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            textFieldMask.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            textFieldMask.heightAnchor.constraint(equalToConstant: 50),
-            buttonCalculate.topAnchor.constraint(equalTo: textFieldMask.bottomAnchor, constant: 20),
-            buttonCalculate.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            buttonCalculate.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            buttonCalculate.heightAnchor.constraint(equalToConstant: 50),
-            tableView.topAnchor.constraint(equalTo: buttonCalculate.bottomAnchor, constant: 20),
-            tableView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            tableView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            tableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20)
+            labelIP.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor,
+                                         constant: UIConstants.Spacing.screenVertial),
+            labelIP.leadingAnchor.constraint(equalTo: leadingAnchor,
+                                             constant: UIConstants.Spacing.screenHorizontal),
+            textFieldIP.topAnchor.constraint(equalTo: labelIP.bottomAnchor,
+                                             constant: UIConstants.Spacing.labelToTextField),
+            textFieldIP.leadingAnchor.constraint(equalTo: leadingAnchor,
+                                                 constant: UIConstants.Spacing.screenHorizontal),
+            textFieldIP.trailingAnchor.constraint(equalTo: trailingAnchor,
+                                                  constant: -UIConstants.Spacing.screenHorizontal),
+            textFieldIP.heightAnchor.constraint(equalToConstant: UIConstants.Size.textFieldHeight),
+            labelMask.topAnchor.constraint(equalTo: textFieldIP.bottomAnchor,
+                                           constant:  UIConstants.Spacing.screenVertial),
+            labelMask.leadingAnchor.constraint(equalTo: leadingAnchor,
+                                               constant: UIConstants.Spacing.screenHorizontal),
+            textFieldMask.topAnchor.constraint(equalTo: labelMask.bottomAnchor,
+                                               constant: UIConstants.Spacing.labelToTextField),
+            textFieldMask.leadingAnchor.constraint(equalTo: leadingAnchor,
+                                                   constant: UIConstants.Spacing.screenHorizontal),
+            textFieldMask.trailingAnchor.constraint(equalTo: trailingAnchor,
+                                                    constant: -UIConstants.Spacing.screenHorizontal),
+            textFieldMask.heightAnchor.constraint(equalToConstant: UIConstants.Size.textFieldHeight),
+            buttonCalculate.topAnchor.constraint(equalTo: textFieldMask.bottomAnchor,
+                                                 constant:  UIConstants.Spacing.screenVertial),
+            buttonCalculate.leadingAnchor.constraint(equalTo: leadingAnchor,
+                                                     constant: UIConstants.Spacing.screenHorizontal),
+            buttonCalculate.trailingAnchor.constraint(equalTo: trailingAnchor,
+                                                      constant: -UIConstants.Spacing.screenHorizontal),
+            buttonCalculate.heightAnchor.constraint(equalToConstant: UIConstants.Size.buttonHeight),
+            tableView.topAnchor.constraint(equalTo: buttonCalculate.bottomAnchor,
+                                           constant:  UIConstants.Spacing.screenVertial),
+            tableView.leadingAnchor.constraint(equalTo: leadingAnchor,
+                                               constant: UIConstants.Spacing.screenHorizontal),
+            tableView.trailingAnchor.constraint(equalTo: trailingAnchor,
+                                                constant: -UIConstants.Spacing.screenHorizontal),
+            tableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor,
+                                              constant: -UIConstants.Spacing.screenVertial)
         ])
     }
 }
