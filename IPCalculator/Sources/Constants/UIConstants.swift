@@ -30,7 +30,7 @@ enum UIConstants {
     }
 
     enum Text {
-        static let title: String = "IP Calculator"
+        static let title: String = "NetBits"
         static let ipLabel: String = "IP address"
         static let ipPlaceholder: String = "Enter your IP address"
         static let maskLabel: String = "Netmask"
