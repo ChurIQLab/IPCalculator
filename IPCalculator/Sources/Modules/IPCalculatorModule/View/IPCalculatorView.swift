@@ -26,7 +26,7 @@ final class IPCalculatorView: UIView {
         return label
     }()
 
-    private let textFieldIP: UITextField = {
+    private lazy var textFieldIP: UITextField = {
         let field = UITextField()
         field.placeholder = UIConstants.Text.ipPlaceholder
         field.borderStyle = .roundedRect
@@ -34,7 +34,8 @@ final class IPCalculatorView: UIView {
         field.applyScaledFont(size: UIConstants.FontSize.title,
                               weight: .regular,
                               textStyle: .body)
-        field.keyboardType = .numbersAndPunctuation
+        field.keyboardType = .numberPad
+        field.delegate = self
         field.translatesAutoresizingMaskIntoConstraints = false
         return field
     }()
@@ -215,5 +216,13 @@ extension IPCalculatorView {
 extension IPCalculatorView: MaskPickerViewDelegate {
     func didSelectRow(_ row: Int) {
         delegate?.didSelectMask(at: row)
+    }
+}
+
+extension IPCalculatorView: UITextFieldDelegate {
+    func textField(_ textField: UITextField,
+                   shouldChangeCharactersIn range: NSRange,
+                   replacementString string: String) -> Bool {
+        return textFieldIP.applyIPFormatting(range: range, replacementString: string)
     }
 }
