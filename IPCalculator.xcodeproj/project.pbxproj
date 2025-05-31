@@ -343,7 +343,7 @@
 				DEVELOPMENT_TEAM = H4V26893K7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IPCalculator/Resources/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "IP калькулятор";
+				INFOPLIST_KEY_CFBundleDisplayName = "IP calculator";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -375,7 +375,7 @@
 				DEVELOPMENT_TEAM = H4V26893K7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IPCalculator/Resources/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "IP калькулятор";
+				INFOPLIST_KEY_CFBundleDisplayName = "IP calculator";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;

@@ -11,7 +11,7 @@ final class IPCalculatorTableViewHeader: UITableViewHeaderFooterView {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 20, weight: .medium)
-        label.text = "Название"
+        label.text = "Name"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -19,7 +19,7 @@ final class IPCalculatorTableViewHeader: UITableViewHeaderFooterView {
     private let valueLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 20, weight: .medium)
-        label.text = "Значение"
+        label.text = "Value"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
