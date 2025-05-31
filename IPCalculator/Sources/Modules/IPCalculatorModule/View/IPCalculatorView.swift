@@ -18,7 +18,7 @@ final class IPCalculatorView: UIView {
 
     private let labelIP: UILabel = {
         let label = UILabel()
-        label.text = "IP Address"
+        label.text = "IP address"
         label.font = .systemFont(ofSize: 20, weight: .medium)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -36,7 +36,7 @@ final class IPCalculatorView: UIView {
 
     private let labelMask: UILabel = {
         let label = UILabel()
-        label.text = "Маска"
+        label.text = "Netmask"
         label.font = .systemFont(ofSize: 20, weight: .medium)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -68,7 +68,7 @@ final class IPCalculatorView: UIView {
 
     private lazy var buttonCalculate: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Подсчитать", for: .normal)
+        button.setTitle("Calculate", for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 20, weight: .bold)
         button.tintColor = .white
         button.backgroundColor = .systemBlue

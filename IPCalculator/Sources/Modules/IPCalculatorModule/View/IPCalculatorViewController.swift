@@ -46,7 +46,7 @@ final class IPCalculatorViewController: UIViewController {
 
 private extension IPCalculatorViewController {
     func setupTitle() {
-        title = "IP Калькулятор"
+        title = "IP Calculator"
         navigationController?.navigationBar.prefersLargeTitles = true
     }
 
