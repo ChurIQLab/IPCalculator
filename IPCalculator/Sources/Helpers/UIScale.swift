@@ -4,7 +4,7 @@ struct UIScale {
     static let screenWidth: CGFloat = UIScreen.main.bounds.width
     static let screenHeight: CGFloat = UIScreen.main.bounds.height
 
-    static let baseScreenSize: CGFloat = 375
+    static let baseScreenSize: CGFloat = 390
 
     static var scaleFactor: CGFloat {
         return min(screenWidth, screenHeight) / baseScreenSize

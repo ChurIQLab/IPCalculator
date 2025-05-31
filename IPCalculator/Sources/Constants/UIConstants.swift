@@ -18,11 +18,14 @@ enum UIConstants {
 
         static let labelToTextField: CGFloat = UIScale.scaled(10)
         static let screenVertial: CGFloat = UIScale.scaled(20)
+
+        static let stackViewSpacing: CGFloat = UIScale.scaled(8)
     }
 
     enum Size {
-        static let textFieldHeight: CGFloat = UIScale.scaled(50)
-        static let buttonHeight: CGFloat = UIScale.scaled(50)
+        static let imageSize: CGFloat = UIScale.scaled(40)
+        static let textFieldHeight: CGFloat = UIScale.scaled(40)
+        static let buttonHeight: CGFloat = UIScale.scaled(40)
         static let borderWidth: CGFloat = UIScale.scaled(1)
     }
 
@@ -35,5 +38,9 @@ enum UIConstants {
         static let calculateButton: String = "Calculate"
         static let nameLabel: String = "Name"
         static let valueLabel: String = "Value"
+    }
+
+    enum Image {
+        static let ipIcon  = "IPCalculatorIcon"
     }
 }

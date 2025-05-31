@@ -11,6 +11,7 @@
 		0F80A77D2DEB0AF400409869 /* UIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F80A77C2DEB0AF100409869 /* UIConstants.swift */; };
 		0F80A77F2DEB0E2D00409869 /* UIScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F80A77E2DEB0E2300409869 /* UIScale.swift */; };
 		0F80A7822DEB153000409869 /* Extension+UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F80A7812DEB152900409869 /* Extension+UITextField.swift */; };
+		0F80A7862DEB3CE000409869 /* NavigationTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F80A7852DEB3CD900409869 /* NavigationTitleView.swift */; };
 		0F8CCA882DE0D468002495C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CCA7E2DE0D468002495C8 /* AppDelegate.swift */; };
 		0F8CCA892DE0D468002495C8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CCA852DE0D468002495C8 /* SceneDelegate.swift */; };
 		0F8CCA8A2DE0D468002495C8 /* IPCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CCA862DE0D468002495C8 /* IPCalculatorViewController.swift */; };
@@ -37,6 +38,7 @@
 		0F80A77C2DEB0AF100409869 /* UIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstants.swift; sourceTree = "<group>"; };
 		0F80A77E2DEB0E2300409869 /* UIScale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScale.swift; sourceTree = "<group>"; };
 		0F80A7812DEB152900409869 /* Extension+UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UITextField.swift"; sourceTree = "<group>"; };
+		0F80A7852DEB3CD900409869 /* NavigationTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTitleView.swift; sourceTree = "<group>"; };
 		0F8CCA662DE0D45A002495C8 /* IPCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IPCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F8CCA7E2DE0D468002495C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F8CCA7F2DE0D468002495C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -96,6 +98,22 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		0F80A7832DEB3CC100409869 /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				0F80A7842DEB3CD300409869 /* UI */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
+		0F80A7842DEB3CD300409869 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				0F80A7852DEB3CD900409869 /* NavigationTitleView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		0F8CCA5D2DE0D45A002495C8 = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +164,7 @@
 			children = (
 				0F80A7782DEB08A000409869 /* Extensions */,
 				0F80A77B2DEB0AE500409869 /* Constants */,
+				0F80A7832DEB3CC100409869 /* Commons */,
 				0F80A7802DEB0EDF00409869 /* Helpers */,
 				0F8CCB3A2DE4DF85002495C8 /* Modules */,
 				0F8CCB3E2DE4E168002495C8 /* Models */,
@@ -347,6 +366,7 @@
 				0F8CCABE2DE3B7CC002495C8 /* IPCalculatorMaskViewModel.swift in Sources */,
 				0F8CCAAD2DE318B6002495C8 /* IPCalculatorTableView.swift in Sources */,
 				0F8CCAB02DE318D9002495C8 /* IPCalculatorMaskPickerView.swift in Sources */,
+				0F80A7862DEB3CE000409869 /* NavigationTitleView.swift in Sources */,
 				0F8CCB402DE4F645002495C8 /* IPCalculationService.swift in Sources */,
 				0F80A7822DEB153000409869 /* Extension+UITextField.swift in Sources */,
 				0F8CCAA72DE1C3CB002495C8 /* IPCalculatorTableViewCell.swift in Sources */,
@@ -387,7 +407,9 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -419,7 +441,9 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
