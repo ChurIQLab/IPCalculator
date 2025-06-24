@@ -71,10 +71,12 @@ final class IPCalculatorView: UIView {
     }()
 
     private lazy var toolbar: UIToolbar = {
-        let toolbar = UIToolbar()
+        let toolbar = UIToolbar(frame: CGRect(x: 0,
+                                              y: 0,
+                                              width: Int(UIScale.screenWidth),
+                                              height: Int(UIConstants.Size.toolbarHeight)))
         let done = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneTapped))
         toolbar.setItems([done], animated: false)
-        toolbar.sizeToFit()
         return toolbar
     }()
 

@@ -27,6 +27,7 @@ enum UIConstants {
         static let textFieldHeight: CGFloat = UIScale.scaled(40)
         static let buttonHeight: CGFloat = UIScale.scaled(40)
         static let borderWidth: CGFloat = UIScale.scaled(1)
+        static let toolbarHeight: CGFloat = UIScale.scaled(44)
     }
 
     enum Text {
