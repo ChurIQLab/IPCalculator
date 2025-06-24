@@ -11,6 +11,7 @@ final class IPCalculatorView: UIView {
 
     weak var delegate: IPCalculatorViewDelegate?
 
+    private let ipValidator: IPAddressValidatable
     private let mainTableView = IPCalculatorTableView()
     private let maskPickerView = IPCalculatorMaskPickerView()
 
@@ -34,7 +35,7 @@ final class IPCalculatorView: UIView {
         field.applyScaledFont(size: UIConstants.FontSize.title,
                               weight: .regular,
                               textStyle: .body)
-        field.keyboardType = .numberPad
+        field.keyboardType = .numbersAndPunctuation
         field.delegate = self
         field.translatesAutoresizingMaskIntoConstraints = false
         return field
@@ -95,6 +96,7 @@ final class IPCalculatorView: UIView {
             for: .touchUpInside
         )
 
+        button.isEnabled = false
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -108,7 +110,8 @@ final class IPCalculatorView: UIView {
 
     // MARK: - Initial
 
-    init() {
+    init(ipValidator: IPAddressValidatable) {
+        self.ipValidator = ipValidator
         super.init(frame: .zero)
         setupView()
         setupHierarchy()
@@ -222,6 +225,18 @@ extension IPCalculatorView: UITextFieldDelegate {
     func textField(_ textField: UITextField,
                    shouldChangeCharactersIn range: NSRange,
                    replacementString string: String) -> Bool {
-        return textFieldIP.applyIPFormatting(range: range, replacementString: string)
+
+        return textField.applyIPFormatting(range: range,
+                                           replacementString: string,
+                                           validator: ipValidator)
+    }
+
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        guard let ip = textField.text else { return }
+        if ipValidator.isValidFinalIP(ip) {
+            buttonCalculate.isEnabled = true
+        } else {
+            buttonCalculate.isEnabled = false
+        }
     }
 }

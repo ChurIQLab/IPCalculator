@@ -31,6 +31,7 @@
 		0F8CCB3D2DE4DFB3002495C8 /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CCB3C2DE4DFAC002495C8 /* ModuleBuilder.swift */; };
 		0F8CCB402DE4F645002495C8 /* IPCalculationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CCB3F2DE4F63D002495C8 /* IPCalculationService.swift */; };
 		0F8CCB432DE65AE2002495C8 /* IPAddressFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CCB422DE65AD8002495C8 /* IPAddressFormatter.swift */; };
+		0FAC9EFC2E0AD5BA0081DACF /* IPAddressValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAC9EFB2E0AD5A20081DACF /* IPAddressValidator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		0F8CCB3C2DE4DFAC002495C8 /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
 		0F8CCB3F2DE4F63D002495C8 /* IPCalculationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPCalculationService.swift; sourceTree = "<group>"; };
 		0F8CCB422DE65AD8002495C8 /* IPAddressFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPAddressFormatter.swift; sourceTree = "<group>"; };
+		0FAC9EFB2E0AD5A20081DACF /* IPAddressValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPAddressValidator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -276,6 +278,7 @@
 		0F8CCB412DE65AC1002495C8 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				0FAC9EFB2E0AD5A20081DACF /* IPAddressValidator.swift */,
 				0F8CCB422DE65AD8002495C8 /* IPAddressFormatter.swift */,
 			);
 			path = Utils;
@@ -365,6 +368,7 @@
 				0F8CCAC02DE3B801002495C8 /* IPCalculatorTableViewModel.swift in Sources */,
 				0F8CCABE2DE3B7CC002495C8 /* IPCalculatorMaskViewModel.swift in Sources */,
 				0F8CCAAD2DE318B6002495C8 /* IPCalculatorTableView.swift in Sources */,
+				0FAC9EFC2E0AD5BA0081DACF /* IPAddressValidator.swift in Sources */,
 				0F8CCAB02DE318D9002495C8 /* IPCalculatorMaskPickerView.swift in Sources */,
 				0F80A7862DEB3CE000409869 /* NavigationTitleView.swift in Sources */,
 				0F8CCB402DE4F645002495C8 /* IPCalculationService.swift in Sources */,
