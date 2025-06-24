@@ -11,7 +11,8 @@ final class IPCalculatorViewController: UIViewController {
     // MARK: - Properties
 
     private let presenter: IPCalculatorProtocol
-    private lazy var customView = IPCalculatorView()
+    private let ipValidator: IPAddressValidatable
+    private lazy var customView = IPCalculatorView(ipValidator: ipValidator)
 
     // MARK: - Lifecycle
 
@@ -31,8 +32,9 @@ final class IPCalculatorViewController: UIViewController {
 
     // MARK: - Initial
 
-    init(presenter: IPCalculatorProtocol) {
+    init(presenter: IPCalculatorProtocol, ipValidator: IPAddressValidatable) {
         self.presenter = presenter
+        self.ipValidator = ipValidator
         super.init(nibName: nil, bundle: nil)
     }
 
