@@ -20,6 +20,7 @@ final class IPCalculatorView: UIView {
     private let labelIP: UILabel = {
         let label = UILabel()
         label.text = UIConstants.Text.ipLabel
+        label.textColor = .label
         label.applyScaledFont(size: UIConstants.FontSize.title,
                               weight: .medium,
                               textStyle: .body)
@@ -32,6 +33,7 @@ final class IPCalculatorView: UIView {
         field.placeholder = UIConstants.Text.ipPlaceholder
         field.borderStyle = .roundedRect
         field.layer.cornerRadius = UIConstants.CornerRadius.normal
+        field.textColor = .label
         field.applyScaledFont(size: UIConstants.FontSize.title,
                               weight: .regular,
                               textStyle: .body)
@@ -44,6 +46,7 @@ final class IPCalculatorView: UIView {
     private let labelMask: UILabel = {
         let label = UILabel()
         label.text = UIConstants.Text.maskLabel
+        label.textColor = .label
         label.applyScaledFont(size: UIConstants.FontSize.title,
                               weight: .medium,
                               textStyle: .body)
@@ -56,6 +59,7 @@ final class IPCalculatorView: UIView {
         field.placeholder = UIConstants.Text.maskPlaceholder
         field.borderStyle = .roundedRect
         field.layer.cornerRadius = UIConstants.CornerRadius.normal
+        field.textColor = .label
         field.applyScaledFont(size: UIConstants.FontSize.title,
                               weight: .regular,
                               textStyle: .body)
@@ -131,7 +135,7 @@ final class IPCalculatorView: UIView {
 
 private extension IPCalculatorView {
     func setupView() {
-        backgroundColor = .white
+        backgroundColor = .systemBackground
     }
 
     func setupHierarchy() {

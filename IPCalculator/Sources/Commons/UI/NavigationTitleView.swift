@@ -16,6 +16,7 @@ final class NavigationTitleView: UIView {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.text = UIConstants.Text.title
+        label.textColor = .label
         label.applyScaledFont(size: UIConstants.FontSize.title,
                               weight: .semibold,
                               textStyle: .largeTitle)
@@ -51,7 +52,7 @@ final class NavigationTitleView: UIView {
 
 private extension NavigationTitleView {
     func setupView() {
-        backgroundColor = .white
+        backgroundColor = .clear
     }
 
     func setupHierarchy() {

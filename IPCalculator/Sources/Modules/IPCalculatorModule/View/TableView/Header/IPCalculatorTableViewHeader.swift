@@ -10,6 +10,7 @@ final class IPCalculatorTableViewHeader: UITableViewHeaderFooterView {
 
     private let titleLabel: UILabel = {
         let label = UILabel()
+        label.textColor = .label
         label.applyScaledFont(size: UIConstants.FontSize.title,
                               weight: .medium,
                               textStyle: .body)
@@ -20,6 +21,7 @@ final class IPCalculatorTableViewHeader: UITableViewHeaderFooterView {
 
     private let valueLabel: UILabel = {
         let label = UILabel()
+        label.textColor = .label
         label.applyScaledFont(size: UIConstants.FontSize.title,
                               weight: .medium,
                               textStyle: .body)

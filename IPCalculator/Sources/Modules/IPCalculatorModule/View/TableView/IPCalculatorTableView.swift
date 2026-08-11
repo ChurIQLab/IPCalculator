@@ -45,6 +45,12 @@ final class IPCalculatorTableView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        guard traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) else { return }
+        tableView.layer.borderColor = UIColor.systemGray5.cgColor
+    }
 }
 
 // MARK: - Setups
