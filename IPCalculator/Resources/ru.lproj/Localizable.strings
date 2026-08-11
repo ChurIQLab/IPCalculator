@@ -1,0 +1,8 @@
+"ip_address_label" = "IP-адрес";
+"ip_address_placeholder" = "Введите IP-адрес";
+"netmask_label" = "Маска подсети";
+"netmask_placeholder" = "Введите маску подсети";
+"calculate_button" = "Рассчитать";
+"table_name_header" = "Параметр";
+"table_value_header" = "Значение";
+"copy_action" = "Скопировать";

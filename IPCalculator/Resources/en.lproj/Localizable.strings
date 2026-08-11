@@ -1,0 +1,8 @@
+"ip_address_label" = "IP address";
+"ip_address_placeholder" = "Enter your IP address";
+"netmask_label" = "Netmask";
+"netmask_placeholder" = "Enter your netmask";
+"calculate_button" = "Calculate";
+"table_name_header" = "Name";
+"table_value_header" = "Value";
+"copy_action" = "Copy";

@@ -104,7 +104,8 @@ extension IPCalculatorTableView: UITableViewDelegate {
         let value = rows[indexPath.row].value
 
         return UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { _ in
-            let copy = UIAction(title: "Copy", image: UIImage(systemName: "doc.on.doc")) { _ in
+            let copyTitle = NSLocalizedString("copy_action", comment: "Copy context menu action")
+            let copy = UIAction(title: copyTitle, image: UIImage(systemName: "doc.on.doc")) { _ in
                 UIPasteboard.general.string = value
                 UINotificationFeedbackGenerator().notificationOccurred(.success)
             }
