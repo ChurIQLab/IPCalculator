@@ -2,8 +2,9 @@ import UIKit
 
 protocol IPCalculatorViewProtocol: AnyObject {
     func display(with model: IPCalculatorViewModel)
-    func updateSelectMaskText(_ text: String)
+    func updateSelectMask(at index: Int, text: String)
     func setAvailableMasks(_ masks: [String])
+    func stripCIDRSuffixFromIPField()
 }
 
 final class IPCalculatorViewController: UIViewController {
@@ -74,12 +75,16 @@ extension IPCalculatorViewController: IPCalculatorViewProtocol {
         customView.showTableView()
     }
 
-    func updateSelectMaskText(_ text: String) {
-        customView.updateTextFieldMask(text: text)
+    func updateSelectMask(at index: Int, text: String) {
+        customView.updateTextFieldMask(at: index, text: text)
     }
     
     func setAvailableMasks(_ masks: [String]) {
         customView.setOptions(masks)
+    }
+
+    func stripCIDRSuffixFromIPField() {
+        customView.stripCIDRSuffixFromIPField()
     }
 }
 
