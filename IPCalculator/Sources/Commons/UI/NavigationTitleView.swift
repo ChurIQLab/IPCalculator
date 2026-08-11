@@ -24,6 +24,17 @@ final class NavigationTitleView: UIView {
         return label
     }()
 
+    private let versionLabel: UILabel = {
+        let label = UILabel()
+        label.text = Bundle.main.appVersionText
+        label.textColor = .secondaryLabel
+        label.applyScaledFont(size: UIConstants.FontSize.small,
+                              weight: .regular,
+                              textStyle: .footnote)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+
     private let stackView: UIStackView = {
         let stack = UIStackView()
         stack.axis = .horizontal
@@ -58,6 +69,7 @@ private extension NavigationTitleView {
     func setupHierarchy() {
         stackView.addArrangedSubview(imageView)
         stackView.addArrangedSubview(titleLabel)
+        stackView.addArrangedSubview(versionLabel)
         addSubview(stackView)
     }
 
@@ -71,5 +83,14 @@ private extension NavigationTitleView {
             imageView.widthAnchor.constraint(equalToConstant: UIConstants.Size.imageSize),
             imageView.heightAnchor.constraint(equalToConstant: UIConstants.Size.imageSize)
         ])
+    }
+}
+
+// MARK: - Bundle version
+
+private extension Bundle {
+    var appVersionText: String? {
+        guard let version = infoDictionary?["CFBundleShortVersionString"] as? String else { return nil }
+        return "v\(version)"
     }
 }
