@@ -13,6 +13,7 @@ final class IPCalculatorPresenter {
     weak var view: IPCalculatorViewProtocol?
 
     private let formatter: IPAddressFormattable
+    private let validator: IPAddressValidatable
     private let ipCalculator: IPCalculationUseCase
 
     private let maskModel: [SubnetMaskModel]
@@ -24,10 +25,12 @@ final class IPCalculatorPresenter {
 
     init(
         formatter: IPAddressFormattable,
+        validator: IPAddressValidatable,
         ipCalculator: IPCalculationUseCase,
         maskModel: [SubnetMaskModel]
     ) {
         self.formatter = formatter
+        self.validator = validator
         self.ipCalculator = ipCalculator
         self.maskModel = maskModel
     }
@@ -40,24 +43,35 @@ extension IPCalculatorPresenter: IPCalculatorProtocol {
         guard !maskModel.isEmpty else { return }
         maskViewModel = maskModel.map { IPCalculatorMaskViewModel(model: $0, formatter: formatter) }
         view?.setAvailableMasks(maskViewModel.map(\.displayText))
-        view?.updateSelectMaskText(maskViewModel[selectedMaskIndex].displayText)
+        view?.updateSelectMask(at: selectedMaskIndex, text: maskViewModel[selectedMaskIndex].displayText)
     }
 
     func didTapCalculate(with ip: String) {
-        let ip = formatter.uint32(from: ip)
-        guard let ip = ip else { return }
-        let calculateModel = ipCalculator.calculate(ip: ip, subnetMask: maskModel[selectedMaskIndex])
+        guard let components = validator.cidrComponents(from: ip),
+              let ipValue = formatter.uint32(from: components.address) else { return }
+
+        if let prefix = components.prefix,
+           let index = maskModel.firstIndex(where: { $0.prefix == prefix }) {
+            selectMask(at: index)
+        }
+
+        let calculateModel = ipCalculator.calculate(ip: ipValue, subnetMask: maskModel[selectedMaskIndex])
         updateUI(with: calculateModel)
     }
-    
+
     func didSelectMask(at index: Int) {
         guard (0..<maskViewModel.count).contains(index) else { return }
-        selectedMaskIndex = index
-        view?.updateSelectMaskText(maskViewModel[index].displayText)
+        selectMask(at: index)
+        view?.stripCIDRSuffixFromIPField()
     }
 }
 
 private extension IPCalculatorPresenter {
+    func selectMask(at index: Int) {
+        selectedMaskIndex = index
+        view?.updateSelectMask(at: index, text: maskViewModel[index].displayText)
+    }
+
     func updateUI(with model: IPCalculationModel) {
         let viewModel = IPCalculatorViewModel(model: model, formatter: formatter)
         view?.display(with: viewModel)

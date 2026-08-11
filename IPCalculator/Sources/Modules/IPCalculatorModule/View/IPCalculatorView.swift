@@ -200,8 +200,14 @@ extension IPCalculatorView {
         mainTableView.configuration(with: model.rows)
     }
 
-    func updateTextFieldMask(text: String) {
+    func updateTextFieldMask(at index: Int, text: String) {
         textFieldMask.text = text
+        maskPickerView.selectRow(index)
+    }
+
+    func stripCIDRSuffixFromIPField() {
+        guard let text = textFieldIP.text, let slashIndex = text.firstIndex(of: "/") else { return }
+        textFieldIP.text = String(text[text.startIndex..<slashIndex])
     }
 
     func setOptions(_ options: [String]) {

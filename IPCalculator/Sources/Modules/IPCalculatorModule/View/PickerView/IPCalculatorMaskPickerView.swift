@@ -44,6 +44,10 @@ extension IPCalculatorMaskPickerView {
         self.options = options
         pickerView.reloadAllComponents()
     }
+
+    func selectRow(_ row: Int, animated: Bool = false) {
+        pickerView.selectRow(row, inComponent: 0, animated: animated)
+    }
 }
 
 // MARK: - Setup

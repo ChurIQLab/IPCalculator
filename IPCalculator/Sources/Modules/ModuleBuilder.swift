@@ -12,6 +12,7 @@ final class ModuleBuilder: Builder {
         let maskModel = SubnetMaskModel.default
         let presenter = IPCalculatorPresenter(
             formatter: formatter,
+            validator: ipValidator,
             ipCalculator: ipCalculator,
             maskModel: maskModel
         )
