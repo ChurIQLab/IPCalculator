@@ -90,6 +90,21 @@ extension IPCalculatorTableView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return tableView.bounds.height / CGFloat(rows.count + 1)
     }
+
+    func tableView(_ tableView: UITableView,
+                   contextMenuConfigurationForRowAt indexPath: IndexPath,
+                   point: CGPoint) -> UIContextMenuConfiguration? {
+        guard rows.indices.contains(indexPath.row) else { return nil }
+        let value = rows[indexPath.row].value
+
+        return UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { _ in
+            let copy = UIAction(title: "Copy", image: UIImage(systemName: "doc.on.doc")) { _ in
+                UIPasteboard.general.string = value
+                UINotificationFeedbackGenerator().notificationOccurred(.success)
+            }
+            return UIMenu(children: [copy])
+        }
+    }
 }
 
 // MARK: - DataSource
