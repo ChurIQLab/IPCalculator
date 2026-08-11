@@ -1,48 +1,48 @@
 # NetBits
 
-Калькулятор IP-адресов и подсетей для iOS.
+An IP address and subnet calculator for iOS.
 
 <p align="center">
   <img src="IPCalculator/Resources/Assets.xcassets/IPCalculatorIcon.imageset/IPCalculatorIcon.png" width="96" alt="NetBits icon">
 </p>
 
-## Возможности
+## Features
 
-- Расчёт по IP-адресу и маске/префиксу подсети
-- Ввод в формате CIDR одной строкой (`192.168.1.10/24`)
-- Бинарное представление адреса и маски
-- Копирование любого значения результата долгим нажатием
-- Светлая и тёмная тема
-- Локализация: English, Русский
+- Calculate from an IP address and subnet mask/prefix
+- CIDR notation input in a single field (`192.168.1.10/24`)
+- Binary representation of the address and mask
+- Copy any result value with a long press
+- Light and Dark mode
+- Localization: English, Русский
 
-## Что считает
+## What it calculates
 
-Netmask, Wildcard, Network, Broadcast, Hostmin, Hostmax, количество хостов —
-плюс бинарный вид адреса и маски.
+Netmask, wildcard, network and broadcast address, usable host range, host
+count — plus the binary view of the address and mask.
 
-## Требования
+## Requirements
 
 - iOS 15.6+
 - Xcode 16+
 
-## Сборка
+## Build
 
 ```bash
 open IPCalculator.xcodeproj
 ```
 
-или из терминала:
+or from the terminal:
 
 ```bash
 xcodebuild -project IPCalculator.xcodeproj -scheme IPCalculator \
   -destination 'platform=iOS Simulator,name=iPhone 16' build
 ```
 
-## Архитектура
+## Architecture
 
-MVP: `Presenter` держит бизнес-логику и состояние экрана, `View`/`ViewController`
-отвечают только за отображение, `Service`/`Formatter`/`Validator` — расчёт и
-валидация IP-адресов.
+MVP: the `Presenter` owns business logic and screen state, the
+`View`/`ViewController` only render, `Service`/`Formatter`/`Validator` handle
+IP calculation and validation.
 
-Ветки: `feature/*` → `develop` (rebase, без merge-коммитов) → `master` через
+Branches: `feature/*` → `develop` (rebase, no merge commits) → `master` via
 Pull Request.
