@@ -32,13 +32,13 @@ enum UIConstants {
 
     enum Text {
         static let title: String = "NetBits"
-        static let ipLabel: String = "IP address"
-        static let ipPlaceholder: String = "Enter your IP address"
-        static let maskLabel: String = "Netmask"
-        static let maskPlaceholder: String = "Enter your netmask"
-        static let calculateButton: String = "Calculate"
-        static let nameLabel: String = "Name"
-        static let valueLabel: String = "Value"
+        static let ipLabel: String = NSLocalizedString("ip_address_label", comment: "IP address field label")
+        static let ipPlaceholder: String = NSLocalizedString("ip_address_placeholder", comment: "IP address field placeholder")
+        static let maskLabel: String = NSLocalizedString("netmask_label", comment: "Netmask field label")
+        static let maskPlaceholder: String = NSLocalizedString("netmask_placeholder", comment: "Netmask field placeholder")
+        static let calculateButton: String = NSLocalizedString("calculate_button", comment: "Calculate button title")
+        static let nameLabel: String = NSLocalizedString("table_name_header", comment: "Result table header, parameter name column")
+        static let valueLabel: String = NSLocalizedString("table_value_header", comment: "Result table header, value column")
     }
 
     enum Image {

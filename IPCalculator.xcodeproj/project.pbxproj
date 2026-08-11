@@ -32,6 +32,7 @@
 		0F8CCB402DE4F645002495C8 /* IPCalculationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CCB3F2DE4F63D002495C8 /* IPCalculationService.swift */; };
 		0F8CCB432DE65AE2002495C8 /* IPAddressFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CCB422DE65AD8002495C8 /* IPAddressFormatter.swift */; };
 		0FAC9EFC2E0AD5BA0081DACF /* IPAddressValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAC9EFB2E0AD5A20081DACF /* IPAddressValidator.swift */; };
+		3E8F2AAA4487BE65482CFB85 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9859F62C10398868D4EAB673 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,8 @@
 		0F8CCB3F2DE4F63D002495C8 /* IPCalculationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPCalculationService.swift; sourceTree = "<group>"; };
 		0F8CCB422DE65AD8002495C8 /* IPAddressFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPAddressFormatter.swift; sourceTree = "<group>"; };
 		0FAC9EFB2E0AD5A20081DACF /* IPAddressValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPAddressValidator.swift; sourceTree = "<group>"; };
+		72BBF9FBF1BDEF256D83024D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		852830D55400E2B66935CD4A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +160,7 @@
 				0F8CCA7F2DE0D468002495C8 /* Assets.xcassets */,
 				0F8CCA802DE0D468002495C8 /* Info.plist */,
 				0F8CCA822DE0D468002495C8 /* LaunchScreen.storyboard */,
+				9859F62C10398868D4EAB673 /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -326,6 +330,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				ru,
 				Base,
 			);
 			mainGroup = 0F8CCA5D2DE0D45A002495C8;
@@ -347,6 +352,7 @@
 			files = (
 				0F8CCA8B2DE0D468002495C8 /* Assets.xcassets in Resources */,
 				0F8CCA8D2DE0D468002495C8 /* LaunchScreen.storyboard in Resources */,
+				3E8F2AAA4487BE65482CFB85 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,6 +398,15 @@
 				0F8CCA812DE0D468002495C8 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		9859F62C10398868D4EAB673 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				72BBF9FBF1BDEF256D83024D /* en */,
+				852830D55400E2B66935CD4A /* ru */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
