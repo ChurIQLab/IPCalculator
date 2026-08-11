@@ -2,6 +2,7 @@ import Foundation
 
 protocol IPAddressFormattable {
     func string(from value: UInt32) -> String
+    func binaryString(from value: UInt32) -> String
     func bytes(from value: UInt32) -> [UInt8]
     func uint32(from string: String) -> UInt32?
 }
@@ -11,7 +12,16 @@ struct IPAddressFormatter: IPAddressFormattable {
         let b = bytes(from: value)
         return "\(b[0]).\(b[1]).\(b[2]).\(b[3])"
     }
-    
+
+    func binaryString(from value: UInt32) -> String {
+        bytes(from: value)
+            .map { byte in
+                let binary = String(byte, radix: 2)
+                return String(repeating: "0", count: 8 - binary.count) + binary
+            }
+            .joined(separator: ".")
+    }
+
     func bytes(from value: UInt32) -> [UInt8] {
         return [
             UInt8((value >> 24) & 0xFF),
