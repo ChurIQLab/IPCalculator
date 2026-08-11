@@ -3,15 +3,42 @@ import Foundation
 protocol IPAddressValidatable {
     func isValidIntermediateInput(_ input: String) -> Bool
     func isValidFinalIP(_ ip: String) -> Bool
+    func cidrComponents(from input: String) -> (address: String, prefix: Int?)?
 }
 
 struct IPAddressValidator: IPAddressValidatable {
     func isValidIntermediateInput(_ input: String) -> Bool {
-        return validate(input, allowEmtyOctets: true, allowTrailingDot: true, requireFourOctets: false)
+        let parts = input.split(separator: "/", maxSplits: 1, omittingEmptySubsequences: false)
+        guard parts.count <= 2 else { return false }
+
+        let addressPart = String(parts[0])
+        guard validate(addressPart, allowEmtyOctets: true, allowTrailingDot: true, requireFourOctets: false) else {
+            return false
+        }
+        guard parts.count == 2 else { return true }
+
+        let prefixPart = String(parts[1])
+        if prefixPart.isEmpty { return true }
+        guard prefixPart.count <= 2, let prefix = Int(prefixPart) else { return false }
+        return prefix <= 32
     }
 
     func isValidFinalIP(_ ip: String) -> Bool {
-        return validate(ip, allowEmtyOctets: false, allowTrailingDot: false, requireFourOctets: true)
+        return cidrComponents(from: ip) != nil
+    }
+
+    func cidrComponents(from input: String) -> (address: String, prefix: Int?)? {
+        let parts = input.split(separator: "/", maxSplits: 1, omittingEmptySubsequences: false)
+        guard parts.count <= 2 else { return nil }
+
+        let addressPart = String(parts[0])
+        guard validate(addressPart, allowEmtyOctets: false, allowTrailingDot: false, requireFourOctets: true) else {
+            return nil
+        }
+        guard parts.count == 2 else { return (addressPart, nil) }
+
+        guard let prefix = Int(parts[1]), (0...32).contains(prefix) else { return nil }
+        return (addressPart, prefix)
     }
 }
 
