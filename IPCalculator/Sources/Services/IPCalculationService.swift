@@ -5,6 +5,13 @@ protocol IPCalculationUseCase {
 }
 
 struct IPCalculationService: IPCalculationUseCase {
+
+    private let classDetector: NetworkClassDetectable
+
+    init(classDetector: NetworkClassDetectable) {
+        self.classDetector = classDetector
+    }
+
     func calculate(ip: UInt32, subnetMask: SubnetMaskModel) -> IPCalculationModel {
         let mask = subnetMask.subnet
         let prefix = subnetMask.prefix
@@ -24,7 +31,9 @@ struct IPCalculationService: IPCalculationUseCase {
             broadcast: broadcast,
             usableHostMin: usableHostMin,
             usableHostMax: usableHostMax,
-            hostCount: hostCount
+            hostCount: hostCount,
+            networkClass: classDetector.networkClass(for: ip),
+            networkType: classDetector.networkType(for: ip)
         )
     }
 }

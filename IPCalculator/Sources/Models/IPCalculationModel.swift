@@ -10,4 +10,6 @@ struct IPCalculationModel {
     let usableHostMin: UInt32
     let usableHostMax: UInt32
     let hostCount: Int
+    let networkClass: NetworkClass
+    let networkType: NetworkType
 }
