@@ -20,7 +20,10 @@ final class IPCalculatorTableView: UIView {
         table.delegate = self
 
         table.allowsSelection = false
-        table.isScrollEnabled = false
+        // Rows share the table height evenly until they hit the legible minimum
+        // in `rowHeight(in:)`; past that the table scrolls instead of clipping.
+        table.isScrollEnabled = true
+        table.alwaysBounceVertical = false
 
         table.layer.cornerRadius = UIConstants.CornerRadius.normal
         table.layer.borderWidth = UIConstants.Size.borderWidth
@@ -90,11 +93,11 @@ extension IPCalculatorTableView: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return tableView.bounds.height / CGFloat(rows.count + 1)
+        return rowHeight(in: tableView)
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return tableView.bounds.height / CGFloat(rows.count + 1)
+        return rowHeight(in: tableView)
     }
 
     func tableView(_ tableView: UITableView,
@@ -111,6 +114,18 @@ extension IPCalculatorTableView: UITableViewDelegate {
             }
             return UIMenu(children: [copy])
         }
+    }
+}
+
+// MARK: - Row height
+
+private extension IPCalculatorTableView {
+    func rowHeight(in tableView: UITableView) -> CGFloat {
+        guard !rows.isEmpty else { return UIConstants.Size.minTableRowHeight }
+        let fitted = tableView.bounds.height / CGFloat(rows.count + 1)
+        let minimum = UIFontMetrics(forTextStyle: .body)
+            .scaledValue(for: UIConstants.Size.minTableRowHeight)
+        return max(fitted, minimum)
     }
 }
 

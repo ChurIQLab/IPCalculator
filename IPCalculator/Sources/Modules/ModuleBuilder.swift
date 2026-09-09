@@ -7,7 +7,8 @@ protocol Builder: AnyObject {
 final class ModuleBuilder: Builder {
     func buildIpCalculatorModule() -> UIViewController {
         let formatter = IPAddressFormatter()
-        let ipCalculator = IPCalculationService()
+        let networkClassDetector = NetworkClassService()
+        let ipCalculator = IPCalculationService(classDetector: networkClassDetector)
         let ipValidator = IPAddressValidator()
         let maskModel = SubnetMaskModel.default
         let presenter = IPCalculatorPresenter(
