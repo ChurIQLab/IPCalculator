@@ -15,7 +15,7 @@ struct IPCalculatorViewModel {
             .init(title: "Hostmin", value: formatter.string(from: model.usableHostMin)),
             .init(title: "Hostmax", value: formatter.string(from: model.usableHostMax)),
             .init(title: "Hosts", value: model.hostCount.description),
-            .init(title: "Class", value: model.networkClass.displayName),
+            .init(title: "Class", value: model.networkClass.rawValue),
             .init(title: "Type", value: model.networkType.rawValue)
         ]
     }
