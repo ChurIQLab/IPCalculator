@@ -1,0 +1,54 @@
+name: Tests
+
+on:
+  push:
+    branches: [develop]
+  pull_request:
+    branches: [master]
+
+concurrency:
+  group: tests-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  unit-tests:
+    name: Unit tests
+    runs-on: macos-15
+    timeout-minutes: 30
+
+    steps:
+      - name: Check out
+        uses: actions/checkout@v5
+
+      - name: Show Xcode version
+        run: xcodebuild -version
+
+      - name: Pick newest available iPhone simulator
+        id: simulator
+        shell: bash
+        run: |
+          udid=$(xcrun simctl list devices available --json | python3 -c '
+          import json, sys
+
+          devices = json.load(sys.stdin)["devices"]
+
+          def ios_version(runtime):
+              return [int(part) for part in runtime.rsplit("iOS-", 1)[1].split("-")]
+
+          for runtime in sorted((r for r in devices if ".iOS-" in r), key=ios_version, reverse=True):
+              iphones = [d for d in devices[runtime] if d["name"].startswith("iPhone")]
+              if iphones:
+                  print(iphones[0]["udid"])
+                  break
+          else:
+              sys.exit("No available iPhone simulator")
+          ')
+          echo "Using simulator $udid"
+          echo "udid=$udid" >> "$GITHUB_OUTPUT"
+
+      - name: Run unit tests
+        run: |
+          xcodebuild test \
+            -project IPCalculator.xcodeproj \
+            -scheme IPCalculator \
+            -destination "id=${{ steps.simulator.outputs.udid }}"
