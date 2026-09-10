@@ -41,6 +41,18 @@ struct IPCalculationServiceTests {
              netmask: "255.255.255.252", wildcard: "0.0.0.3",
              network: "192.168.1.0", broadcast: "192.168.1.3",
              hostMin: "192.168.1.1", hostMax: "192.168.1.2", hostCount: 2),
+        Case(address: "10.0.0.0", prefix: 31,
+             netmask: "255.255.255.254", wildcard: "0.0.0.1",
+             network: "10.0.0.0", broadcast: "10.0.0.1",
+             hostMin: "10.0.0.0", hostMax: "10.0.0.1", hostCount: 2),
+        Case(address: "10.0.0.1", prefix: 31,
+             netmask: "255.255.255.254", wildcard: "0.0.0.1",
+             network: "10.0.0.0", broadcast: "10.0.0.1",
+             hostMin: "10.0.0.0", hostMax: "10.0.0.1", hostCount: 2),
+        Case(address: "10.0.0.5", prefix: 32,
+             netmask: "255.255.255.255", wildcard: "0.0.0.0",
+             network: "10.0.0.5", broadcast: "10.0.0.5",
+             hostMin: "10.0.0.5", hostMax: "10.0.0.5", hostCount: 1),
         Case(address: "8.8.8.8", prefix: 0,
              netmask: "0.0.0.0", wildcard: "255.255.255.255",
              network: "0.0.0.0", broadcast: "255.255.255.255",
@@ -57,22 +69,6 @@ struct IPCalculationServiceTests {
         #expect(formatter.string(from: model.usableHostMin) == testCase.hostMin)
         #expect(formatter.string(from: model.usableHostMax) == testCase.hostMax)
         #expect(model.hostCount == testCase.hostCount)
-    }
-
-    @Test func calculatesBoundsForSlash31() throws {
-        let model = try calculate("10.0.0.1", prefix: 31)
-
-        #expect(formatter.string(from: model.netmask) == "255.255.255.254")
-        #expect(formatter.string(from: model.network) == "10.0.0.0")
-        #expect(formatter.string(from: model.broadcast) == "10.0.0.1")
-    }
-
-    @Test func calculatesBoundsForSlash32() throws {
-        let model = try calculate("10.0.0.5", prefix: 32)
-
-        #expect(formatter.string(from: model.netmask) == "255.255.255.255")
-        #expect(formatter.string(from: model.network) == "10.0.0.5")
-        #expect(formatter.string(from: model.broadcast) == "10.0.0.5")
     }
 
     @Test func takesClassAndTypeFromInjectedDetector() {
