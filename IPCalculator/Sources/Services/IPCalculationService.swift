@@ -18,9 +18,13 @@ struct IPCalculationService: IPCalculationUseCase {
         let wildcard = ~mask
         let network = ip & mask
         let broadcast = network | wildcard
-        let usableHostMin = prefix == 32 ? ip : network + 1
-        let usableHostMax = prefix >= 31 ? ip : broadcast - 1
-        let hostCount = prefix >= 31 ? 0 : (1 << (32 - prefix)) - 2
+        // /31 (RFC 3021 point-to-point) and /32 (host route) have no separate
+        // network and broadcast addresses, so every address in the block is usable.
+        let reservesNetworkAndBroadcast = prefix <= 30
+        let blockSize = 1 << (32 - prefix)
+        let usableHostMin = reservesNetworkAndBroadcast ? network + 1 : network
+        let usableHostMax = reservesNetworkAndBroadcast ? broadcast - 1 : broadcast
+        let hostCount = reservesNetworkAndBroadcast ? blockSize - 2 : blockSize
 
         return IPCalculationModel(
             ip: ip,
