@@ -38,6 +38,16 @@
 		3E8F2AAA4487BE65482CFB85 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9859F62C10398868D4EAB673 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		0FB7E0042F10000400249701 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0F8CCA5E2DE0D45A002495C8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0F8CCA652DE0D45A002495C8;
+			remoteInfo = IPCalculator;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		0F80A7792DEB08A900409869 /* Extension+UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIFont.swift"; sourceTree = "<group>"; };
 		0F80A77C2DEB0AF100409869 /* UIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstants.swift; sourceTree = "<group>"; };
@@ -69,12 +79,28 @@
 		0FA1C1052E90000500249601 /* NetworkClassService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClassService.swift; sourceTree = "<group>"; };
 		0F8CCB422DE65AD8002495C8 /* IPAddressFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPAddressFormatter.swift; sourceTree = "<group>"; };
 		0FAC9EFB2E0AD5A20081DACF /* IPAddressValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPAddressValidator.swift; sourceTree = "<group>"; };
+		0FB7E0022F10000200249701 /* IPCalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IPCalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		72BBF9FBF1BDEF256D83024D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		852830D55400E2B66935CD4A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		0FB7E0032F10000300249701 /* IPCalculatorTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = IPCalculatorTests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
 		0F8CCA632DE0D45A002495C8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0FB7E0072F10000700249701 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -129,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				0F8CCA872DE0D468002495C8 /* IPCalculator */,
+				0FB7E0032F10000300249701 /* IPCalculatorTests */,
 				0F8CCA672DE0D45A002495C8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -137,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				0F8CCA662DE0D45A002495C8 /* IPCalculator.app */,
+				0FB7E0022F10000200249701 /* IPCalculatorTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -319,6 +347,29 @@
 			productReference = 0F8CCA662DE0D45A002495C8 /* IPCalculator.app */;
 			productType = "com.apple.product-type.application";
 		};
+		0FB7E0012F10000100249701 /* IPCalculatorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0FB7E0092F10000900249701 /* Build configuration list for PBXNativeTarget "IPCalculatorTests" */;
+			buildPhases = (
+				0FB7E0062F10000600249701 /* Sources */,
+				0FB7E0072F10000700249701 /* Frameworks */,
+				0FB7E0082F10000800249701 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0FB7E0052F10000500249701 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				0FB7E0032F10000300249701 /* IPCalculatorTests */,
+			);
+			name = IPCalculatorTests;
+			packageProductDependencies = (
+			);
+			productName = IPCalculatorTests;
+			productReference = 0FB7E0022F10000200249701 /* IPCalculatorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -331,6 +382,10 @@
 				TargetAttributes = {
 					0F8CCA652DE0D45A002495C8 = {
 						CreatedOnToolsVersion = 16.3;
+					};
+					0FB7E0012F10000100249701 = {
+						CreatedOnToolsVersion = 26.6;
+						TestTargetID = 0F8CCA652DE0D45A002495C8;
 					};
 				};
 			};
@@ -350,6 +405,7 @@
 			projectRoot = "";
 			targets = (
 				0F8CCA652DE0D45A002495C8 /* IPCalculator */,
+				0FB7E0012F10000100249701 /* IPCalculatorTests */,
 			);
 		};
 /* End PBXProject section */
@@ -362,6 +418,13 @@
 				0F8CCA8B2DE0D468002495C8 /* Assets.xcassets in Resources */,
 				0F8CCA8D2DE0D468002495C8 /* LaunchScreen.storyboard in Resources */,
 				3E8F2AAA4487BE65482CFB85 /* Localizable.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0FB7E0082F10000800249701 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,7 +464,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0FB7E0062F10000600249701 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0FB7E0052F10000500249701 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0F8CCA652DE0D45A002495C8 /* IPCalculator */;
+			targetProxy = 0FB7E0042F10000400249701 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0F8CCA822DE0D468002495C8 /* LaunchScreen.storyboard */ = {
@@ -613,6 +691,48 @@
 			};
 			name = Release;
 		};
+		0FB7E00A2F10000A00249701 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H4V26893K7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				PRODUCT_BUNDLE_IDENTIFIER = com.my.IPCalculatorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IPCalculator.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/IPCalculator";
+			};
+			name = Debug;
+		};
+		0FB7E00B2F10000B00249701 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H4V26893K7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				PRODUCT_BUNDLE_IDENTIFIER = com.my.IPCalculatorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IPCalculator.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/IPCalculator";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -630,6 +750,15 @@
 			buildConfigurations = (
 				0F8CCA7A2DE0D45C002495C8 /* Debug */,
 				0F8CCA7B2DE0D45C002495C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0FB7E0092F10000900249701 /* Build configuration list for PBXNativeTarget "IPCalculatorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0FB7E00A2F10000A00249701 /* Debug */,
+				0FB7E00B2F10000B00249701 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
