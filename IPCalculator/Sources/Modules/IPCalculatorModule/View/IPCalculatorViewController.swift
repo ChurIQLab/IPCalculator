@@ -5,6 +5,7 @@ protocol IPCalculatorViewProtocol: AnyObject {
     func updateSelectMask(at index: Int, text: String)
     func setAvailableMasks(_ masks: [String])
     func stripCIDRSuffixFromIPField()
+    func presentShareSheet(text: String)
 }
 
 final class IPCalculatorViewController: UIViewController {
@@ -14,6 +15,12 @@ final class IPCalculatorViewController: UIViewController {
     private let presenter: IPCalculatorProtocol
     private let ipValidator: IPAddressValidatable
     private lazy var customView = IPCalculatorView(ipValidator: ipValidator)
+    private lazy var shareButton = UIBarButtonItem(
+        systemItem: .action,
+        primaryAction: UIAction { [weak self] _ in
+            self?.presenter.didTapShare()
+        }
+    )
 
     // MARK: - Lifecycle
 
@@ -57,6 +64,11 @@ private extension IPCalculatorViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tapGesture)
     }
+
+    func showShareButton() {
+        guard navigationItem.rightBarButtonItem == nil else { return }
+        navigationItem.setRightBarButton(shareButton, animated: true)
+    }
 }
 
 // MARK: - Objc Action
@@ -73,6 +85,7 @@ extension IPCalculatorViewController: IPCalculatorViewProtocol {
     func display(with model: IPCalculatorViewModel) {
         customView.configuration(with: model)
         customView.showTableView()
+        showShareButton()
     }
 
     func updateSelectMask(at index: Int, text: String) {
@@ -85,6 +98,12 @@ extension IPCalculatorViewController: IPCalculatorViewProtocol {
 
     func stripCIDRSuffixFromIPField() {
         customView.stripCIDRSuffixFromIPField()
+    }
+
+    func presentShareSheet(text: String) {
+        let activityController = UIActivityViewController(activityItems: [text], applicationActivities: nil)
+        activityController.popoverPresentationController?.barButtonItem = shareButton
+        present(activityController, animated: true)
     }
 }
 

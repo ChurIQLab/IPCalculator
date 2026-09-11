@@ -4,6 +4,7 @@ protocol IPCalculatorProtocol: AnyObject {
     func viewDidLoad()
     func didTapCalculate(with ip: String)
     func didSelectMask(at index: Int)
+    func didTapShare()
 }
 
 final class IPCalculatorPresenter {
@@ -20,6 +21,7 @@ final class IPCalculatorPresenter {
     private var maskViewModel: [IPCalculatorMaskViewModel] = []
 
     private var selectedMaskIndex: Int = 0
+    private var lastResult: IPCalculatorViewModel?
 
     // MARK: - Initial
 
@@ -64,6 +66,11 @@ extension IPCalculatorPresenter: IPCalculatorProtocol {
         selectMask(at: index)
         view?.stripCIDRSuffixFromIPField()
     }
+
+    func didTapShare() {
+        guard let lastResult = lastResult else { return }
+        view?.presentShareSheet(text: lastResult.shareText)
+    }
 }
 
 private extension IPCalculatorPresenter {
@@ -74,6 +81,7 @@ private extension IPCalculatorPresenter {
 
     func updateUI(with model: IPCalculationModel) {
         let viewModel = IPCalculatorViewModel(model: model, formatter: formatter)
+        lastResult = viewModel
         view?.display(with: viewModel)
     }
 }
