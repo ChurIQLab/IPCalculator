@@ -2,6 +2,7 @@ import Foundation
 
 struct IPCalculatorViewModel {
     let rows: [IPCalculatorTableViewModel]
+    let shareText: String
 
     init(model: IPCalculationModel, formatter: IPAddressFormattable) {
         rows = [
@@ -18,5 +19,10 @@ struct IPCalculatorViewModel {
             .init(title: "Class", value: model.networkClass.rawValue),
             .init(title: "Type", value: model.networkType.rawValue)
         ]
+
+        // Binary rows (the monospaced ones) are left out: long runs of digits wrap badly in messengers.
+        let header = "\(formatter.string(from: model.ip))/\(model.prefix)"
+        let lines = rows.filter { !$0.isMonospaced }.map { "\($0.title): \($0.value)" }
+        shareText = ([header, ""] + lines).joined(separator: "\n")
     }
 }
