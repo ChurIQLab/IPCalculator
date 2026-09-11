@@ -5,6 +5,7 @@ import Foundation
 enum NetworkType: String {
     case `private` = "Private"
     case `public` = "Public"
+    case thisNetwork = "This network"
     case loopback = "Loopback"
     case linkLocal = "Link-local"
     case cgnat = "CGNAT"

@@ -23,7 +23,7 @@ struct NetworkClassServiceTests {
     /// Every class boundary, both edges of every special-purpose range, and the
     /// first address outside each range.
     @Test(arguments: [
-        Case("0.0.0.0", .a, .public),
+        Case("0.0.0.0", .a, .thisNetwork),
         Case("9.255.255.255", .a, .public),
         Case("10.0.0.0", .a, .private),
         Case("10.255.255.255", .a, .private),
