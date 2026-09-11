@@ -30,10 +30,10 @@
 		0F8CCAC02DE3B801002495C8 /* IPCalculatorTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CCABF2DE3B7F4002495C8 /* IPCalculatorTableViewModel.swift */; };
 		0F8CCB3D2DE4DFB3002495C8 /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CCB3C2DE4DFAC002495C8 /* ModuleBuilder.swift */; };
 		0F8CCB402DE4F645002495C8 /* IPCalculationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CCB3F2DE4F63D002495C8 /* IPCalculationService.swift */; };
+		0F8CCB432DE65AE2002495C8 /* IPAddressFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CCB422DE65AD8002495C8 /* IPAddressFormatter.swift */; };
 		0FA1C1022E90000200249601 /* NetworkClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA1C1012E90000100249601 /* NetworkClass.swift */; };
 		0FA1C1042E90000400249601 /* NetworkType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA1C1032E90000300249601 /* NetworkType.swift */; };
 		0FA1C1062E90000600249601 /* NetworkClassService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA1C1052E90000500249601 /* NetworkClassService.swift */; };
-		0F8CCB432DE65AE2002495C8 /* IPAddressFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CCB422DE65AD8002495C8 /* IPAddressFormatter.swift */; };
 		0FAC9EFC2E0AD5BA0081DACF /* IPAddressValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAC9EFB2E0AD5A20081DACF /* IPAddressValidator.swift */; };
 		3E8F2AAA4487BE65482CFB85 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9859F62C10398868D4EAB673 /* Localizable.strings */; };
 /* End PBXBuildFile section */
@@ -74,10 +74,10 @@
 		0F8CCABF2DE3B7F4002495C8 /* IPCalculatorTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPCalculatorTableViewModel.swift; sourceTree = "<group>"; };
 		0F8CCB3C2DE4DFAC002495C8 /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
 		0F8CCB3F2DE4F63D002495C8 /* IPCalculationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPCalculationService.swift; sourceTree = "<group>"; };
+		0F8CCB422DE65AD8002495C8 /* IPAddressFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPAddressFormatter.swift; sourceTree = "<group>"; };
 		0FA1C1012E90000100249601 /* NetworkClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClass.swift; sourceTree = "<group>"; };
 		0FA1C1032E90000300249601 /* NetworkType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkType.swift; sourceTree = "<group>"; };
 		0FA1C1052E90000500249601 /* NetworkClassService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClassService.swift; sourceTree = "<group>"; };
-		0F8CCB422DE65AD8002495C8 /* IPAddressFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPAddressFormatter.swift; sourceTree = "<group>"; };
 		0FAC9EFB2E0AD5A20081DACF /* IPAddressValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPAddressValidator.swift; sourceTree = "<group>"; };
 		0FB7E0022F10000200249701 /* IPCalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IPCalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		72BBF9FBF1BDEF256D83024D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
