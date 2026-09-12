@@ -55,7 +55,7 @@ struct NetworkClassServiceTests {
         Case("224.0.0.0", .d, .multicast),
         Case("239.255.255.255", .d, .multicast),
         Case("240.0.0.0", .e, .reserved),
-        Case("255.255.255.255", .e, .reserved)
+        Case("255.255.255.255", .e, .limitedBroadcast)
     ])
     func detectsClassAndType(_ testCase: Case) throws {
         let ip = try #require(formatter.uint32(from: testCase.address))
