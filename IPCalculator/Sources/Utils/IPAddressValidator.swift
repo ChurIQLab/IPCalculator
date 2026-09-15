@@ -12,7 +12,7 @@ struct IPAddressValidator: IPAddressValidatable {
         guard parts.count <= 2 else { return false }
 
         let addressPart = String(parts[0])
-        guard validate(addressPart, allowEmtyOctets: true, allowTrailingDot: true, requireFourOctets: false) else {
+        guard validate(addressPart, allowEmptyOctets: true, allowTrailingDot: true, requireFourOctets: false) else {
             return false
         }
         guard parts.count == 2 else { return true }
@@ -32,7 +32,7 @@ struct IPAddressValidator: IPAddressValidatable {
         guard parts.count <= 2 else { return nil }
 
         let addressPart = String(parts[0])
-        guard validate(addressPart, allowEmtyOctets: false, allowTrailingDot: false, requireFourOctets: true) else {
+        guard validate(addressPart, allowEmptyOctets: false, allowTrailingDot: false, requireFourOctets: true) else {
             return nil
         }
         guard parts.count == 2 else { return (addressPart, nil) }
@@ -44,17 +44,17 @@ struct IPAddressValidator: IPAddressValidatable {
 
 private extension IPAddressValidator {
     func validate(_ ip: String,
-                  allowEmtyOctets: Bool,
+                  allowEmptyOctets: Bool,
                   allowTrailingDot: Bool,
                   requireFourOctets: Bool) -> Bool {
         if ip.hasPrefix(".") || ip.contains("..") || !allowTrailingDot && ip.hasSuffix(".") { return false }
 
-        let components = ip.split(separator: ".", omittingEmptySubsequences: !allowEmtyOctets)
+        let components = ip.split(separator: ".", omittingEmptySubsequences: !allowEmptyOctets)
         if requireFourOctets && components.count != 4 { return false }
         if !requireFourOctets && components.count > 4 { return false }
 
         for octet in components {
-            if !allowEmtyOctets && octet.isEmpty { return false }
+            if !allowEmptyOctets && octet.isEmpty { return false }
             if octet.count > 1 && octet.first == "0" { return false }
             if !octet.isEmpty && UInt8(octet) == nil { return false }
         }
