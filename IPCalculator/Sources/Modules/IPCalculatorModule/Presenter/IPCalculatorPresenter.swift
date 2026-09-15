@@ -38,7 +38,7 @@ final class IPCalculatorPresenter {
     }
 }
 
-// MARK: - MainPresenterProtocol
+// MARK: - IPCalculatorProtocol
 
 extension IPCalculatorPresenter: IPCalculatorProtocol {
     func viewDidLoad() {
