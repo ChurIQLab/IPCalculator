@@ -11,14 +11,18 @@ An IP address and subnet calculator for iOS.
 - Calculate from an IP address and subnet mask/prefix
 - CIDR notation input in a single field (`192.168.1.10/24`)
 - Binary representation of the address and mask
+- Network class (A–E) and address type: Private, Public, Loopback, CGNAT,
+  Multicast and more
 - Copy any result value with a long press
+- Share the result as text
 - Light and Dark mode
 - Localization: English, Русский
 
 ## What it calculates
 
 Netmask, wildcard, network and broadcast address, usable host range, host
-count — plus the binary view of the address and mask.
+count, network class and address type — plus the binary view of the address
+and mask.
 
 ## Requirements
 
