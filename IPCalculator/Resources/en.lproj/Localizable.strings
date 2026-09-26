@@ -6,3 +6,9 @@
 "table_name_header" = "Name";
 "table_value_header" = "Value";
 "copy_action" = "Copy";
+"split_network_action" = "Split network";
+"split_unavailable_note" = "/32 is a single address, nothing to split";
+"split_title" = "Split network";
+"split_prefix_label" = "Subnet mask";
+"split_summary" = "Subnets: %d · hosts each: %d";
+"copy_whole_subnet_action" = "Whole subnet";

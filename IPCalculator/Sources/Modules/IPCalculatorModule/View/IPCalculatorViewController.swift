@@ -6,6 +6,7 @@ protocol IPCalculatorViewProtocol: AnyObject {
     func setAvailableMasks(_ masks: [String])
     func stripCIDRSuffixFromIPField()
     func presentShareSheet(text: String)
+    func showSubnetSplit(for model: IPCalculationModel)
 }
 
 final class IPCalculatorViewController: UIViewController {
@@ -14,6 +15,7 @@ final class IPCalculatorViewController: UIViewController {
 
     private let presenter: IPCalculatorProtocol
     private let ipValidator: IPAddressValidatable
+    private let builder: Builder
     private lazy var customView = IPCalculatorView(ipValidator: ipValidator)
     private lazy var shareButton = UIBarButtonItem(
         systemItem: .action,
@@ -40,9 +42,10 @@ final class IPCalculatorViewController: UIViewController {
 
     // MARK: - Initial
 
-    init(presenter: IPCalculatorProtocol, ipValidator: IPAddressValidatable) {
+    init(presenter: IPCalculatorProtocol, ipValidator: IPAddressValidatable, builder: Builder) {
         self.presenter = presenter
         self.ipValidator = ipValidator
+        self.builder = builder
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -105,6 +108,11 @@ extension IPCalculatorViewController: IPCalculatorViewProtocol {
         activityController.popoverPresentationController?.barButtonItem = shareButton
         present(activityController, animated: true)
     }
+
+    func showSubnetSplit(for model: IPCalculationModel) {
+        let splitModule = builder.buildSubnetSplitModule(network: model)
+        navigationController?.pushViewController(splitModule, animated: true)
+    }
 }
 
 // MARK: - Delegate
@@ -117,5 +125,9 @@ extension IPCalculatorViewController: IPCalculatorViewDelegate {
 
     func didSelectMask(at index: Int) {
         presenter.didSelectMask(at: index)
+    }
+
+    func didTapSplit() {
+        presenter.didTapSplit()
     }
 }

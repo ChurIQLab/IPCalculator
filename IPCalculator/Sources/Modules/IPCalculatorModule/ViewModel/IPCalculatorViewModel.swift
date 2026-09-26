@@ -3,6 +3,8 @@ import Foundation
 struct IPCalculatorViewModel {
     let rows: [IPCalculatorTableViewModel]
     let shareText: String
+    /// A /32 is a single address: there is nothing to split.
+    let isSplitAvailable: Bool
 
     init(model: IPCalculationModel, formatter: IPAddressFormattable) {
         rows = [
@@ -24,5 +26,7 @@ struct IPCalculatorViewModel {
         let header = "\(formatter.string(from: model.ip))/\(model.prefix)"
         let lines = rows.filter { !$0.isMonospaced }.map { "\($0.title): \($0.value)" }
         shareText = ([header, ""] + lines).joined(separator: "\n")
+
+        isSplitAvailable = model.prefix < 32
     }
 }
