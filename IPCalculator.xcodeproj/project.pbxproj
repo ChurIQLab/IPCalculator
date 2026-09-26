@@ -37,6 +37,12 @@
 		0FA1C1082E90000800249601 /* SubnetAllocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA1C1072E90000700249601 /* SubnetAllocation.swift */; };
 		0FA1C10A2E90000A00249601 /* SubnetSplitError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA1C1092E90000900249601 /* SubnetSplitError.swift */; };
 		0FA1C10C2E90000C00249601 /* SubnetSplitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA1C10B2E90000B00249601 /* SubnetSplitService.swift */; };
+		0FA1C2042E90010400249601 /* SubnetSplitPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA1C2032E90010300249601 /* SubnetSplitPresenter.swift */; };
+		0FA1C2062E90010600249601 /* SubnetSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA1C2052E90010500249601 /* SubnetSplitViewController.swift */; };
+		0FA1C2082E90010800249601 /* SubnetSplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA1C2072E90010700249601 /* SubnetSplitView.swift */; };
+		0FA1C20A2E90010A00249601 /* SubnetSplitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA1C2092E90010900249601 /* SubnetSplitTableViewCell.swift */; };
+		0FA1C20C2E90010C00249601 /* SubnetSplitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA1C20B2E90010B00249601 /* SubnetSplitViewModel.swift */; };
+		0FA1C20E2E90010E00249601 /* SubnetSplitRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA1C20D2E90010D00249601 /* SubnetSplitRowViewModel.swift */; };
 		0FAC9EFC2E0AD5BA0081DACF /* IPAddressValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAC9EFB2E0AD5A20081DACF /* IPAddressValidator.swift */; };
 		3E8F2AAA4487BE65482CFB85 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9859F62C10398868D4EAB673 /* Localizable.strings */; };
 /* End PBXBuildFile section */
@@ -84,6 +90,12 @@
 		0FA1C1072E90000700249601 /* SubnetAllocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubnetAllocation.swift; sourceTree = "<group>"; };
 		0FA1C1092E90000900249601 /* SubnetSplitError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubnetSplitError.swift; sourceTree = "<group>"; };
 		0FA1C10B2E90000B00249601 /* SubnetSplitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubnetSplitService.swift; sourceTree = "<group>"; };
+		0FA1C2032E90010300249601 /* SubnetSplitPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubnetSplitPresenter.swift; sourceTree = "<group>"; };
+		0FA1C2052E90010500249601 /* SubnetSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubnetSplitViewController.swift; sourceTree = "<group>"; };
+		0FA1C2072E90010700249601 /* SubnetSplitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubnetSplitView.swift; sourceTree = "<group>"; };
+		0FA1C2092E90010900249601 /* SubnetSplitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubnetSplitTableViewCell.swift; sourceTree = "<group>"; };
+		0FA1C20B2E90010B00249601 /* SubnetSplitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubnetSplitViewModel.swift; sourceTree = "<group>"; };
+		0FA1C20D2E90010D00249601 /* SubnetSplitRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubnetSplitRowViewModel.swift; sourceTree = "<group>"; };
 		0FAC9EFB2E0AD5A20081DACF /* IPAddressValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPAddressValidator.swift; sourceTree = "<group>"; };
 		0FB7E0022F10000200249701 /* IPCalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IPCalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		72BBF9FBF1BDEF256D83024D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -298,6 +310,7 @@
 			children = (
 				0F8CCB3C2DE4DFAC002495C8 /* ModuleBuilder.swift */,
 				0F8CCB3B2DE4DF96002495C8 /* IPCalculatorModule */,
+				0FA1C2102E90011000249601 /* SubnetSplitModule */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -332,6 +345,59 @@
 				0F8CCB422DE65AD8002495C8 /* IPAddressFormatter.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		0FA1C2102E90011000249601 /* SubnetSplitModule */ = {
+			isa = PBXGroup;
+			children = (
+				0FA1C2122E90011200249601 /* View */,
+				0FA1C2152E90011500249601 /* ViewModel */,
+				0FA1C2112E90011100249601 /* Presenter */,
+			);
+			path = SubnetSplitModule;
+			sourceTree = "<group>";
+		};
+		0FA1C2112E90011100249601 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				0FA1C2032E90010300249601 /* SubnetSplitPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		0FA1C2122E90011200249601 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0FA1C2132E90011300249601 /* TableView */,
+				0FA1C2072E90010700249601 /* SubnetSplitView.swift */,
+				0FA1C2052E90010500249601 /* SubnetSplitViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0FA1C2132E90011300249601 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				0FA1C2142E90011400249601 /* Cell */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		0FA1C2142E90011400249601 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0FA1C2092E90010900249601 /* SubnetSplitTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		0FA1C2152E90011500249601 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0FA1C20B2E90010B00249601 /* SubnetSplitViewModel.swift */,
+				0FA1C20D2E90010D00249601 /* SubnetSplitRowViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -465,6 +531,12 @@
 				0FA1C1082E90000800249601 /* SubnetAllocation.swift in Sources */,
 				0FA1C10A2E90000A00249601 /* SubnetSplitError.swift in Sources */,
 				0FA1C10C2E90000C00249601 /* SubnetSplitService.swift in Sources */,
+				0FA1C2042E90010400249601 /* SubnetSplitPresenter.swift in Sources */,
+				0FA1C2062E90010600249601 /* SubnetSplitViewController.swift in Sources */,
+				0FA1C2082E90010800249601 /* SubnetSplitView.swift in Sources */,
+				0FA1C20A2E90010A00249601 /* SubnetSplitTableViewCell.swift in Sources */,
+				0FA1C20C2E90010C00249601 /* SubnetSplitViewModel.swift in Sources */,
+				0FA1C20E2E90010E00249601 /* SubnetSplitRowViewModel.swift in Sources */,
 				0F80A7822DEB153000409869 /* Extension+UITextField.swift in Sources */,
 				0F8CCAA72DE1C3CB002495C8 /* IPCalculatorTableViewCell.swift in Sources */,
 				0F80A77D2DEB0AF400409869 /* UIConstants.swift in Sources */,

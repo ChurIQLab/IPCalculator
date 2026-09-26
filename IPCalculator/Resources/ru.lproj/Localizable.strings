@@ -6,3 +6,9 @@
 "table_name_header" = "Параметр";
 "table_value_header" = "Значение";
 "copy_action" = "Скопировать";
+"split_network_action" = "Разбить сеть";
+"split_unavailable_note" = "/32 — один адрес, делить нечего";
+"split_title" = "Разбить сеть";
+"split_prefix_label" = "Маска подсетей";
+"split_summary" = "Подсетей: %d · хостов в каждой: %d";
+"copy_whole_subnet_action" = "Вся подсеть";

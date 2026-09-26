@@ -3,6 +3,7 @@ import UIKit
 protocol IPCalculatorViewDelegate: AnyObject {
     func didTapCalculate(with ip: String?)
     func didSelectMask(at index: Int)
+    func didTapSplit()
 }
 
 final class IPCalculatorView: UIView {
@@ -107,6 +108,32 @@ final class IPCalculatorView: UIView {
         return button
     }()
 
+    private lazy var buttonSplit: UIButton = {
+        var configuration = UIButton.Configuration.plain()
+        configuration.image = UIImage(systemName: "chevron.right")
+        configuration.imagePlacement = .trailing
+        configuration.preferredSymbolConfigurationForImage = UIImage.SymbolConfiguration(textStyle: .footnote)
+        configuration.titleLineBreakMode = .byTruncatingTail
+        // A dynamic stroke color follows dark mode, unlike a layer border.
+        configuration.background.cornerRadius = UIConstants.CornerRadius.normal
+        configuration.background.strokeColor = .systemGray5
+        configuration.background.strokeWidth = UIConstants.Size.borderWidth
+
+        let button = UIButton(configuration: configuration)
+        button.contentHorizontalAlignment = .fill
+
+        button.addAction(
+            UIAction { [weak self] _ in
+                self?.delegate?.didTapSplit()
+            },
+            for: .touchUpInside
+        )
+
+        button.isHidden = true
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+
     private lazy var tableView: UITableView = {
         let table = mainTableView.tableView
         table.isHidden = true
@@ -145,6 +172,7 @@ private extension IPCalculatorView {
         addSubview(textFieldMask)
         addSubview(buttonCalculate)
         addSubview(tableView)
+        addSubview(buttonSplit)
     }
 
     func setupLayout() {
@@ -183,9 +211,31 @@ private extension IPCalculatorView {
                                                constant: UIConstants.Spacing.screenHorizontal),
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor,
                                                 constant: -UIConstants.Spacing.screenHorizontal),
-            tableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor,
-                                              constant: -UIConstants.Spacing.screenVertial)
+            buttonSplit.topAnchor.constraint(equalTo: tableView.bottomAnchor,
+                                             constant: UIConstants.Spacing.labelToTextField),
+            buttonSplit.leadingAnchor.constraint(equalTo: leadingAnchor,
+                                                 constant: UIConstants.Spacing.screenHorizontal),
+            buttonSplit.trailingAnchor.constraint(equalTo: trailingAnchor,
+                                                  constant: -UIConstants.Spacing.screenHorizontal),
+            buttonSplit.heightAnchor.constraint(greaterThanOrEqualToConstant: UIConstants.Size.buttonHeight),
+            buttonSplit.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor,
+                                                constant: -UIConstants.Spacing.screenVertial)
         ])
+    }
+}
+
+// MARK: - Split button
+
+private extension IPCalculatorView {
+    /// A /32 keeps the button visible but disabled, with the reason as its title.
+    func configureSplitButton(isAvailable: Bool) {
+        var configuration = buttonSplit.configuration
+        let title = isAvailable ? UIConstants.Text.splitNetwork : UIConstants.Text.splitUnavailable
+        let font = UIFont.scalableFont(size: UIConstants.FontSize.body, weight: .medium, textStyle: .body)
+        configuration?.attributedTitle = AttributedString(title, attributes: AttributeContainer([.font: font]))
+        configuration?.image = isAvailable ? UIImage(systemName: "chevron.right") : nil
+        buttonSplit.configuration = configuration
+        buttonSplit.isEnabled = isAvailable
     }
 }
 
@@ -202,6 +252,7 @@ private extension IPCalculatorView {
 extension IPCalculatorView {
     func configuration(with model: IPCalculatorViewModel) {
         mainTableView.configuration(with: model.rows)
+        configureSplitButton(isAvailable: model.isSplitAvailable)
     }
 
     func updateTextFieldMask(at index: Int, text: String) {
@@ -221,6 +272,7 @@ extension IPCalculatorView {
     func showTableView() {
         UIView.animate(withDuration: 0.3) { [weak self] in
             self?.tableView.isHidden = false
+            self?.buttonSplit.isHidden = false
         }
     }
 }

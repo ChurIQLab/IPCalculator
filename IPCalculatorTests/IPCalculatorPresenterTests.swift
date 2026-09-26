@@ -50,4 +50,6 @@ private final class ViewSpy: IPCalculatorViewProtocol {
     func presentShareSheet(text: String) {
         sharedTexts.append(text)
     }
+
+    func showSubnetSplit(for model: IPCalculationModel) {}
 }

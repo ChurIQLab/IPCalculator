@@ -5,6 +5,7 @@ protocol IPCalculatorProtocol: AnyObject {
     func didTapCalculate(with ip: String)
     func didSelectMask(at index: Int)
     func didTapShare()
+    func didTapSplit()
 }
 
 final class IPCalculatorPresenter {
@@ -21,6 +22,7 @@ final class IPCalculatorPresenter {
     private var maskViewModel: [IPCalculatorMaskViewModel] = []
 
     private var selectedMaskIndex: Int = 0
+    private var lastModel: IPCalculationModel?
     private var lastResult: IPCalculatorViewModel?
 
     // MARK: - Initial
@@ -71,6 +73,11 @@ extension IPCalculatorPresenter: IPCalculatorProtocol {
         guard let lastResult = lastResult else { return }
         view?.presentShareSheet(text: lastResult.shareText)
     }
+
+    func didTapSplit() {
+        guard let lastModel = lastModel, lastResult?.isSplitAvailable == true else { return }
+        view?.showSubnetSplit(for: lastModel)
+    }
 }
 
 private extension IPCalculatorPresenter {
@@ -81,6 +88,7 @@ private extension IPCalculatorPresenter {
 
     func updateUI(with model: IPCalculationModel) {
         let viewModel = IPCalculatorViewModel(model: model, formatter: formatter)
+        lastModel = model
         lastResult = viewModel
         view?.display(with: viewModel)
     }
