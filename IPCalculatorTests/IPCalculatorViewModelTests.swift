@@ -44,4 +44,14 @@ struct IPCalculatorViewModelTests {
         Type: Private
         """)
     }
+
+    @Test(arguments: [(prefix: 31, available: true), (prefix: 32, available: false)])
+    func splitIsAvailableUpToSlash31(prefix: Int, available: Bool) {
+        let calculator = IPCalculationService(classDetector: NetworkClassService())
+        let model = calculator.calculate(ip: 0x0A00_0001, subnetMask: SubnetMaskModel(prefix: prefix))
+
+        let viewModel = IPCalculatorViewModel(model: model, formatter: IPAddressFormatter())
+
+        #expect(viewModel.isSplitAvailable == available)
+    }
 }
