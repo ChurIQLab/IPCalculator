@@ -43,6 +43,10 @@
 		0FA1C20A2E90010A00249601 /* SubnetSplitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA1C2092E90010900249601 /* SubnetSplitTableViewCell.swift */; };
 		0FA1C20C2E90010C00249601 /* SubnetSplitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA1C20B2E90010B00249601 /* SubnetSplitViewModel.swift */; };
 		0FA1C20E2E90010E00249601 /* SubnetSplitRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA1C20D2E90010D00249601 /* SubnetSplitRowViewModel.swift */; };
+		0FA1C2172E90011700249601 /* SubnetSplitMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA1C2162E90011600249601 /* SubnetSplitMode.swift */; };
+		0FA1C2192E90011900249601 /* SubnetHostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA1C2182E90011800249601 /* SubnetHostsViewModel.swift */; };
+		0FA1C21B2E90011B00249601 /* SubnetHostsRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA1C21A2E90011A00249601 /* SubnetHostsRowViewModel.swift */; };
+		0FA1C21D2E90011D00249601 /* SubnetNeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA1C21C2E90011C00249601 /* SubnetNeedTableViewCell.swift */; };
 		0FAC9EFC2E0AD5BA0081DACF /* IPAddressValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAC9EFB2E0AD5A20081DACF /* IPAddressValidator.swift */; };
 		3E8F2AAA4487BE65482CFB85 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9859F62C10398868D4EAB673 /* Localizable.strings */; };
 /* End PBXBuildFile section */
@@ -96,6 +100,10 @@
 		0FA1C2092E90010900249601 /* SubnetSplitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubnetSplitTableViewCell.swift; sourceTree = "<group>"; };
 		0FA1C20B2E90010B00249601 /* SubnetSplitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubnetSplitViewModel.swift; sourceTree = "<group>"; };
 		0FA1C20D2E90010D00249601 /* SubnetSplitRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubnetSplitRowViewModel.swift; sourceTree = "<group>"; };
+		0FA1C2162E90011600249601 /* SubnetSplitMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubnetSplitMode.swift; sourceTree = "<group>"; };
+		0FA1C2182E90011800249601 /* SubnetHostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubnetHostsViewModel.swift; sourceTree = "<group>"; };
+		0FA1C21A2E90011A00249601 /* SubnetHostsRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubnetHostsRowViewModel.swift; sourceTree = "<group>"; };
+		0FA1C21C2E90011C00249601 /* SubnetNeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubnetNeedTableViewCell.swift; sourceTree = "<group>"; };
 		0FAC9EFB2E0AD5A20081DACF /* IPAddressValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPAddressValidator.swift; sourceTree = "<group>"; };
 		0FB7E0022F10000200249701 /* IPCalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IPCalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		72BBF9FBF1BDEF256D83024D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -360,6 +368,7 @@
 		0FA1C2112E90011100249601 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				0FA1C2162E90011600249601 /* SubnetSplitMode.swift */,
 				0FA1C2032E90010300249601 /* SubnetSplitPresenter.swift */,
 			);
 			path = Presenter;
@@ -386,6 +395,7 @@
 		0FA1C2142E90011400249601 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				0FA1C21C2E90011C00249601 /* SubnetNeedTableViewCell.swift */,
 				0FA1C2092E90010900249601 /* SubnetSplitTableViewCell.swift */,
 			);
 			path = Cell;
@@ -394,6 +404,8 @@
 		0FA1C2152E90011500249601 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				0FA1C21A2E90011A00249601 /* SubnetHostsRowViewModel.swift */,
+				0FA1C2182E90011800249601 /* SubnetHostsViewModel.swift */,
 				0FA1C20B2E90010B00249601 /* SubnetSplitViewModel.swift */,
 				0FA1C20D2E90010D00249601 /* SubnetSplitRowViewModel.swift */,
 			);
@@ -531,6 +543,10 @@
 				0FA1C1082E90000800249601 /* SubnetAllocation.swift in Sources */,
 				0FA1C10A2E90000A00249601 /* SubnetSplitError.swift in Sources */,
 				0FA1C10C2E90000C00249601 /* SubnetSplitService.swift in Sources */,
+				0FA1C2172E90011700249601 /* SubnetSplitMode.swift in Sources */,
+				0FA1C2192E90011900249601 /* SubnetHostsViewModel.swift in Sources */,
+				0FA1C21B2E90011B00249601 /* SubnetHostsRowViewModel.swift in Sources */,
+				0FA1C21D2E90011D00249601 /* SubnetNeedTableViewCell.swift in Sources */,
 				0FA1C2042E90010400249601 /* SubnetSplitPresenter.swift in Sources */,
 				0FA1C2062E90010600249601 /* SubnetSplitViewController.swift in Sources */,
 				0FA1C2082E90010800249601 /* SubnetSplitView.swift in Sources */,

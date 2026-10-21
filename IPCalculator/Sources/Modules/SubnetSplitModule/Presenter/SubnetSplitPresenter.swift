@@ -2,7 +2,11 @@ import Foundation
 
 protocol SubnetSplitProtocol: AnyObject {
     func viewDidLoad()
+    func didSelectMode(at index: Int)
     func didSelectPrefix(at index: Int)
+    func didChangeNeed(at index: Int, text: String)
+    func didTapAddNeed()
+    func didDeleteNeed(at index: Int)
     func didTapShare()
 }
 
@@ -17,7 +21,13 @@ final class SubnetSplitPresenter {
     private let formatter: IPAddressFormattable
 
     private let prefixOptions: [IPCalculatorMaskViewModel]
+    private var mode: SubnetSplitMode = .equal
+    private var selectedPrefixIndex = 0
+    /// One entry per requirement row; nil while the row's field is empty.
+    private var needs: [Int?] = [nil]
+
     private var lastResult: SubnetSplitViewModel?
+    private var lastHostsResult: SubnetHostsViewModel?
 
     // MARK: - Initial
 
@@ -40,7 +50,16 @@ final class SubnetSplitPresenter {
 extension SubnetSplitPresenter: SubnetSplitProtocol {
     func viewDidLoad() {
         guard !prefixOptions.isEmpty else { return }
-        split(at: 0)
+        split(at: selectedPrefixIndex)
+    }
+
+    func didSelectMode(at index: Int) {
+        guard let newMode = SubnetSplitMode(rawValue: index), !prefixOptions.isEmpty else { return }
+        mode = newMode
+        switch mode {
+        case .equal: split(at: selectedPrefixIndex)
+        case .hosts: splitByHosts()
+        }
     }
 
     func didSelectPrefix(at index: Int) {
@@ -48,9 +67,37 @@ extension SubnetSplitPresenter: SubnetSplitProtocol {
         split(at: index)
     }
 
+    func didChangeNeed(at index: Int, text: String) {
+        guard needs.indices.contains(index) else { return }
+        // The field takes digits only; zero is not a host count.
+        let value = Int(text).flatMap { $0 > 0 ? $0 : nil }
+        needs[index] = value
+        splitByHosts()
+    }
+
+    func didTapAddNeed() {
+        needs.append(nil)
+        splitByHosts()
+    }
+
+    func didDeleteNeed(at index: Int) {
+        guard needs.indices.contains(index) else { return }
+        needs.remove(at: index)
+        // The list always keeps one row to type into.
+        if needs.isEmpty {
+            needs = [nil]
+        }
+        splitByHosts()
+    }
+
     func didTapShare() {
-        guard let lastResult = lastResult else { return }
-        view?.presentShareSheet(text: lastResult.shareText)
+        let text: String?
+        switch mode {
+        case .equal: text = lastResult?.shareText
+        case .hosts: text = lastHostsResult?.shareText
+        }
+        guard let text = text else { return }
+        view?.presentShareSheet(text: text)
     }
 }
 
@@ -65,6 +112,7 @@ private extension SubnetSplitPresenter {
     }
 
     func split(at index: Int) {
+        selectedPrefixIndex = index
         let subnets = (try? splitter.split(
             ip: network.network,
             subnetMask: SubnetMaskModel(prefix: network.prefix),
@@ -79,5 +127,38 @@ private extension SubnetSplitPresenter {
         )
         lastResult = viewModel
         view?.display(with: viewModel)
+    }
+
+    func splitByHosts() {
+        let viewModel = SubnetHostsViewModel(
+            network: network,
+            needs: needs,
+            outcome: hostsOutcome(),
+            formatter: formatter
+        )
+        lastHostsResult = viewModel
+        view?.displayHosts(with: viewModel)
+    }
+
+    /// Splits by the rows that have a number. The service numbers requirements
+    /// by its own input, so its indices are mapped back to the rows.
+    func hostsOutcome() -> SubnetHostsViewModel.Outcome {
+        let entered = needs.enumerated().compactMap { row, hosts in
+            hosts.map { (row: row, hosts: $0) }
+        }
+        guard !entered.isEmpty else { return .empty }
+
+        do {
+            let allocations = try splitter.split(
+                ip: network.network,
+                subnetMask: SubnetMaskModel(prefix: network.prefix),
+                hostCounts: entered.map(\.hosts)
+            )
+            return .placed(allocations.map { (needNumber: entered[$0.requestIndex].row + 1, allocation: $0) })
+        } catch SubnetSplitError.notEnoughSpace(let requestIndex, let hostCount) {
+            return .notEnoughSpace(needNumber: entered[requestIndex].row + 1, hostCount: hostCount)
+        } catch {
+            return .empty
+        }
     }
 }

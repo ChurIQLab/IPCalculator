@@ -12,3 +12,16 @@
 "split_prefix_label" = "Subnet mask";
 "split_summary" = "Subnets: %d · hosts each: %d";
 "copy_whole_subnet_action" = "Whole subnet";
+"split_mode_equal" = "Equal parts";
+"split_mode_hosts" = "By hosts";
+"split_needs_header" = "Hosts needed";
+"split_subnets_header" = "Subnets";
+"split_add_need" = "Add network";
+"split_need_placeholder" = "Number of hosts";
+"split_need_number" = "#%d";
+"split_need_line" = "#%d — hosts needed: %d";
+"split_hosts_hint" = "Enter how many hosts each network needs";
+"split_free_space" = "Free: %@ (addresses: %@)";
+"split_no_free_space" = "No free addresses left";
+"split_not_enough_space" = "#%d does not fit — hosts needed: %d. Reduce or remove networks.";
+"delete_action" = "Delete";

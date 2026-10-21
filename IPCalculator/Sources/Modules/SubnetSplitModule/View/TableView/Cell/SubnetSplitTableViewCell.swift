@@ -8,6 +8,17 @@ final class SubnetSplitTableViewCell: UITableViewCell {
 
     // MARK: - Outlets
 
+    private let needLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .systemBlue
+        label.numberOfLines = 0
+        label.applyScaledFont(size: UIConstants.FontSize.small,
+                              weight: .medium,
+                              textStyle: .subheadline)
+        label.isHidden = true
+        return label
+    }()
+
     private let networkLabel: UILabel = {
         let label = UILabel()
         label.textColor = .label
@@ -59,7 +70,7 @@ final class SubnetSplitTableViewCell: UITableViewCell {
     }()
 
     private lazy var stackView: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [topStackView, rangeLabel, broadcastLabel])
+        let stack = UIStackView(arrangedSubviews: [needLabel, topStackView, rangeLabel, broadcastLabel])
         stack.axis = .vertical
         stack.spacing = UIConstants.Spacing.subnetCellLineSpacing
         stack.translatesAutoresizingMaskIntoConstraints = false
@@ -105,7 +116,10 @@ private extension SubnetSplitTableViewCell {
 // MARK: - Configure
 
 extension SubnetSplitTableViewCell {
-    func configuration(with row: SubnetSplitRowViewModel) {
+    /// `need` is the requirement line of a split by host count; nil hides it.
+    func configuration(with row: SubnetSplitRowViewModel, need: String? = nil) {
+        needLabel.text = need
+        needLabel.isHidden = need == nil
         networkLabel.text = row.network
         hostsLabel.text = "Hosts: \(row.hosts)"
         rangeLabel.text = row.hostRange

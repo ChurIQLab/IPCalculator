@@ -2,6 +2,7 @@ import UIKit
 
 protocol SubnetSplitViewProtocol: AnyObject {
     func display(with model: SubnetSplitViewModel)
+    func displayHosts(with model: SubnetHostsViewModel)
     func presentShareSheet(text: String)
 }
 
@@ -63,6 +64,10 @@ extension SubnetSplitViewController: SubnetSplitViewProtocol {
         customView.configuration(with: model)
     }
 
+    func displayHosts(with model: SubnetHostsViewModel) {
+        customView.configuration(with: model)
+    }
+
     func presentShareSheet(text: String) {
         let activityController = UIActivityViewController(activityItems: [text], applicationActivities: nil)
         activityController.popoverPresentationController?.barButtonItem = shareButton
@@ -73,7 +78,23 @@ extension SubnetSplitViewController: SubnetSplitViewProtocol {
 // MARK: - Delegate
 
 extension SubnetSplitViewController: SubnetSplitViewDelegate {
+    func didSelectMode(at index: Int) {
+        presenter.didSelectMode(at: index)
+    }
+
     func didSelectPrefix(at index: Int) {
         presenter.didSelectPrefix(at: index)
+    }
+
+    func didChangeNeed(at index: Int, text: String) {
+        presenter.didChangeNeed(at: index, text: text)
+    }
+
+    func didTapAddNeed() {
+        presenter.didTapAddNeed()
+    }
+
+    func didDeleteNeed(at index: Int) {
+        presenter.didDeleteNeed(at: index)
     }
 }

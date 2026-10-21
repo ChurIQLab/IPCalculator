@@ -130,6 +130,8 @@ private final class ViewSpy: SubnetSplitViewProtocol {
         displayed.append(model)
     }
 
+    func displayHosts(with model: SubnetHostsViewModel) {}
+
     func presentShareSheet(text: String) {
         sharedTexts.append(text)
     }
