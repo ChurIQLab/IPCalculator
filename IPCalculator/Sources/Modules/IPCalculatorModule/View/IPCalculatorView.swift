@@ -109,18 +109,15 @@ final class IPCalculatorView: UIView {
     }()
 
     private lazy var buttonSplit: UIButton = {
-        var configuration = UIButton.Configuration.plain()
-        configuration.image = UIImage(systemName: "chevron.right")
-        configuration.imagePlacement = .trailing
-        configuration.preferredSymbolConfigurationForImage = UIImage.SymbolConfiguration(textStyle: .footnote)
+        // Tinted: the secondary action, paired with the filled Calculate button.
+        var configuration = UIButton.Configuration.tinted()
+        configuration.imagePlacement = .leading
+        configuration.imagePadding = UIConstants.Spacing.stackViewSpacing
         configuration.titleLineBreakMode = .byTruncatingTail
-        // A dynamic stroke color follows dark mode, unlike a layer border.
-        configuration.background.cornerRadius = UIConstants.CornerRadius.normal
-        configuration.background.strokeColor = .systemGray5
-        configuration.background.strokeWidth = UIConstants.Size.borderWidth
+        configuration.cornerStyle = .fixed
+        configuration.background.cornerRadius = UIConstants.CornerRadius.button
 
         let button = UIButton(configuration: configuration)
-        button.contentHorizontalAlignment = .fill
 
         button.addAction(
             UIAction { [weak self] _ in
@@ -231,9 +228,9 @@ private extension IPCalculatorView {
     func configureSplitButton(isAvailable: Bool) {
         var configuration = buttonSplit.configuration
         let title = isAvailable ? UIConstants.Text.splitNetwork : UIConstants.Text.splitUnavailable
-        let font = UIFont.scalableFont(size: UIConstants.FontSize.body, weight: .medium, textStyle: .body)
+        let font = UIFont.scalableFont(size: UIConstants.FontSize.title, weight: .semibold, textStyle: .body)
         configuration?.attributedTitle = AttributedString(title, attributes: AttributeContainer([.font: font]))
-        configuration?.image = isAvailable ? UIImage(systemName: "chevron.right") : nil
+        configuration?.image = isAvailable ? UIImage(systemName: UIConstants.Image.splitIcon) : nil
         buttonSplit.configuration = configuration
         buttonSplit.isEnabled = isAvailable
     }
