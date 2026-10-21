@@ -12,3 +12,16 @@
 "split_prefix_label" = "Маска подсетей";
 "split_summary" = "Подсетей: %d · хостов в каждой: %d";
 "copy_whole_subnet_action" = "Вся подсеть";
+"split_mode_equal" = "Поровну";
+"split_mode_hosts" = "По хостам";
+"split_needs_header" = "Нужно хостов";
+"split_subnets_header" = "Подсети";
+"split_add_need" = "Добавить сеть";
+"split_need_placeholder" = "Число хостов";
+"split_need_number" = "№%d";
+"split_need_line" = "№%d — нужно хостов: %d";
+"split_hosts_hint" = "Укажите, сколько хостов нужно каждой сети";
+"split_free_space" = "Свободно: %@ (адресов: %@)";
+"split_no_free_space" = "Свободных адресов не осталось";
+"split_not_enough_space" = "№%d не помещается — нужно хостов: %d. Уменьшите или уберите сети.";
+"delete_action" = "Удалить";
