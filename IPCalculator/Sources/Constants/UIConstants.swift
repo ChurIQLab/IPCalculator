@@ -53,5 +53,6 @@ enum UIConstants {
 
     enum Image {
         static let ipIcon  = "IPCalculatorIcon"
+        static let splitIcon = "square.split.2x2"
     }
 }
