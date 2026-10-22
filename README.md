@@ -13,8 +13,10 @@ An IP address and subnet calculator for iOS.
 - Binary representation of the address and mask
 - Network class (A–E) and address type: Private, Public, Loopback, CGNAT,
   Multicast and more
+- Split a network into subnets: into equal parts by choosing a subnet mask,
+  or by host counts (VLSM) — enter how many hosts each network needs
 - Copy any result value with a long press
-- Share the result as text
+- Share the result or the list of subnets as text
 - Light and Dark mode
 - Localization: English, Русский
 
@@ -23,6 +25,14 @@ An IP address and subnet calculator for iOS.
 Netmask, wildcard, network and broadcast address, usable host range, host
 count, network class and address type — plus the binary view of the address
 and mask.
+
+Split network:
+
+- **Equal parts** — pick a subnet mask and get every subnet with its host
+  count, host range and broadcast address.
+- **By hosts** — list the networks you need; the largest are placed first, each
+  gets the smallest subnet that fits, and the free remainder is shown. If the
+  networks don't fit, NetBits says which one.
 
 ## Requirements
 
