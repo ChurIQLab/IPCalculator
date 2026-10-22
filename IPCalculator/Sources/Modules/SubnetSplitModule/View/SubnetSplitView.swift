@@ -315,6 +315,9 @@ extension SubnetSplitView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         guard isAddNeedRow(indexPath) else { return }
+        // Resigning delivers keystrokes still queued for the field; it must happen
+        // before the new row reloads the table, not inside that reload.
+        endEditing(true)
         delegate?.didTapAddNeed()
     }
 
